@@ -147,6 +147,61 @@ footer a:hover{border-color:#F5E6A8}
  .js .up,.js .lf,.js .rt,.js header{opacity:1!important;transform:none!important}
  .js .photo,.js .mapbox{clip-path:none!important}
 }
+
+/* ===== 어두운 테마 ===== */
+html{color-scheme:dark;background:#0C0F14}
+::selection{background:#C9A96A;color:#15110A}
+body{background:#0C0F14;color:#E6E3DC}
+#bar{background:#C9A96A}
+header{background:rgba(12,15,20,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
+header.shadow{box-shadow:0 8px 28px rgba(0,0,0,.55)}
+.logo{background:#fff;padding:4px 10px;border-radius:8px}
+.tag{color:rgba(230,227,220,.72)}
+.menu button{color:#E6E3DC}
+.dd{background:#171C25;border:1px solid rgba(255,255,255,.09)}
+.dd a{color:#E6E3DC}.dd a:hover{background:#212836}
+.hero{background:radial-gradient(ellipse at 78% 18%,rgba(201,169,106,.18),transparent 55%),linear-gradient(180deg,rgba(8,10,14,.6),rgba(8,10,14,.86)),#12161D url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png) center/cover}
+.hero::after{background:linear-gradient(115deg,transparent 35%,rgba(201,169,106,.09) 50%,transparent 65%)}
+.hero h1::before{content:"";display:block;width:52px;height:2px;background:#C9A96A;margin-bottom:22px}
+.b1{background:#C9A96A;color:#15110A}
+.b2{border-color:rgba(255,255,255,.55)}
+.sec-title{background:#0C0F14}
+.sec-title h2{color:#F1EEE7}
+.sec-title h2::after{background:#C9A96A}
+.services{background:linear-gradient(180deg,#0C0F14,#11151C 40%,#0C0F14)}
+.col{background:#161B24;border:1px solid rgba(255,255,255,.07);padding:0 0 24px;transition:transform .35s,box-shadow .35s,border-color .35s}
+.col>*:not(.pic){margin-left:20px;margin-right:20px}
+.desc br{display:none}
+.col:hover{transform:translateY(-6px);box-shadow:0 24px 44px -24px rgba(0,0,0,.9);border-color:rgba(201,169,106,.5)}
+.pic{background:#1b212b;margin-bottom:22px}
+h3{color:#F1E3C3}
+.desc{color:#C9A96A}
+.col ul{color:#D9D6CF}
+.col li::marker{color:#C9A96A}
+.col li:hover{color:#F1E3C3}
+.profile{background:#0C0F14}
+.photo{background:#171C25;outline:1px solid rgba(201,169,106,.38);outline-offset:8px;box-shadow:0 24px 50px -24px rgba(0,0,0,.9)}
+.role{color:#9AA3B2}
+.name{color:#F4F1EA}
+.lead{color:#E3C98F}
+.hist{color:#F4F1EA}
+.hist::before{background:#C9A96A}
+.career{color:#D5D2CB}
+.career li:hover{color:#E3C98F}
+.visit{background:#11151C}
+.visit h2{color:#F1EEE7}
+.visit h4{color:#E3C98F}
+.visit p{color:#CFCBC3}
+.mapbox{background:#1b212b}
+.mapbox iframe{filter:invert(.92) hue-rotate(180deg) saturate(.7) brightness(.95) contrast(.9)}
+.consult{background:#0C0F14}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,169,106,.4)}50%{box-shadow:0 0 0 12px rgba(201,169,106,0)}}
+.consult a:hover{box-shadow:0 14px 28px -12px rgba(201,169,106,.5)}
+footer{background:#07090C;color:#C9C3B5;border-top:1px solid rgba(255,255,255,.07)}
+footer h2{color:#E3C98F}
+footer a:hover{border-color:#E3C98F}
+#top{background:#C9A96A;color:#15110A}
+@media (max-width:760px){.logo{padding:3px 8px}}
 </style>
 </head>
 <body>
