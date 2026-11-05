@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>신우세무회계사무소 | 기장/법인사업자/상속/증여/양도</title>
+<meta name="description" content="세금의 차이가, 미래의 가치를 만듭니다. 법인·개인사업자 세무관리부터 부동산·주식 양도, 상속·증여, 세무조사 대응까지.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+<script>document.documentElement.className="js"</script>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:#fff;color:#212121;font-family:'Nanum Myeongjo','나눔명조','Batang','AppleMyungjo',serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+ul{margin:0;padding:0}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+/* 진행 표시줄 */
+#bar{position:fixed;left:0;top:0;height:3px;width:0;background:#1F4E9E;z-index:60;transition:width .1s}
+
+/* 머리글 */
+header{position:sticky;top:0;z-index:50;background:#fff;transition:box-shadow .3s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js header{transform:translateY(-100%)}
+.js header.on{transform:none}
+header.shadow{box-shadow:0 2px 14px rgba(0,0,0,.12)}
+.hd{max-width:1100px;margin:0 auto;padding:0 16px;height:56px;display:flex;align-items:center;gap:14px}
+.logo{height:36px;width:auto;display:block}
+.tag{font-family:'Nanum Gothic','Malgun Gothic',sans-serif;font-weight:300;font-size:17px;color:rgba(0,0,0,.8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sp{flex:1}
+.menu{position:relative}
+.menu button{font:700 15px 'Nanum Gothic','Malgun Gothic',sans-serif;background:none;border:0;color:rgba(0,0,0,.85);padding:12px 8px;min-height:44px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.menu button svg{transition:transform .25s}
+.menu.open button svg{transform:rotate(180deg)}
+.dd{position:absolute;right:0;top:100%;min-width:250px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:6px 0;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .25s,transform .25s}
+.menu.open .dd{opacity:1;transform:none;pointer-events:auto}
+.dd a{display:block;padding:12px 20px;font:400 15px 'Nanum Gothic','Malgun Gothic',sans-serif;transition:background .2s,padding-left .2s}
+.dd a:hover{background:#EEF2F8;padding-left:26px}
+
+/* 첫 화면 */
+.hero{position:relative;overflow:hidden;background:#37474F url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png) center/cover;min-height:421px;display:flex;align-items:center;color:#fff}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.07) 50%,transparent 65%);transform:translateX(-100%);animation:shine 5s 1.2s ease-in-out infinite}
+@keyframes shine{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+.hero .wrap{position:relative;z-index:1;padding-top:40px;padding-bottom:40px;width:100%}
+h1{margin:0 0 20px;font-weight:800;font-size:clamp(30px,5.4vw,54px);line-height:1.35;letter-spacing:-.01em;text-wrap:balance}
+.hero p{margin:0 0 26px;font-size:clamp(15px,1.9vw,19px);line-height:1.7;color:#E8E8E8;word-break:keep-all;font-weight:700}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:'Nanum Gothic','Malgun Gothic',sans-serif;font-weight:700;font-size:16px;min-height:48px;padding:12px 28px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 20px -8px rgba(0,0,0,.5)}
+.b1{background:#fff;color:#14233B}
+.b2{border:1px solid #fff;color:#fff}
+.b2:hover{background:rgba(255,255,255,.12)}
+
+/* 공통 등장 효과 */
+.up{transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.js .up{opacity:0;transform:translateY(26px)}
+.js .in .up,.js .up.in{opacity:1;transform:none}
+.js .lf{transform:translateX(-36px)}
+.js .rt{transform:translateX(36px)}
+.js .in .lf,.js .lf.in,.js .in .rt,.js .rt.in{transform:none}
+.js .hero .up{opacity:0;animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s);transition:none;transform:none}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* 제목 */
+.sec-title{background:#fff;padding:36px 20px 30px;text-align:center}
+.sec-title h2{margin:0;display:inline-block;font-weight:400;font-size:clamp(26px,4vw,36px);color:#222;position:relative;padding-bottom:12px}
+.sec-title h2::after{content:"";position:absolute;left:50%;bottom:0;height:2px;width:0;background:#8B1E2D;transform:translateX(-50%);transition:width .9s .5s cubic-bezier(.2,.7,.2,1)}
+.js .sec-title.in h2::after,.sec-title h2.in::after{width:64px}
+html:not(.js) .sec-title h2::after{width:64px}
+
+/* 업무 분야 */
+.services{background:#F2F2F2;padding:20px 0 28px}
+.grid{max-width:920px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px}
+.col{padding:16px 0}
+.pic{overflow:hidden;aspect-ratio:1200/770;background:#e4e4e4;margin-bottom:22px}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.col:hover .pic img{transform:scale(1.06)}
+h3{margin:0 0 14px;text-align:center;font-size:clamp(20px,2.2vw,25px);line-height:1.45;font-weight:400;color:#5B1F0F;word-break:keep-all}
+.desc{word-break:keep-all;margin:0 0 20px;font-size:15.5px;line-height:1.9;color:#8A4B12}
+.col ul{list-style:square;padding-left:22px;font-size:14.5px;line-height:1.65}
+.col li{word-break:keep-all;margin:0 0 9px;padding-left:4px;transition:transform .25s,color .25s}
+.col li:hover{transform:translateX(5px);color:#5B1F0F}
+
+/* 대표 프로필 */
+.profile{background:#fff;padding:56px 0 48px}
+.pf{max-width:920px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:42px;align-items:start}
+.photo{overflow:hidden;background:#eee;aspect-ratio:748/1024}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.js .photo{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s cubic-bezier(.2,.7,.2,1)}
+.js .in .photo{clip-path:inset(0 0 0 0)}
+.js .photo img{transform:scale(1.15);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.js .in .photo img{transform:none}
+.role{font-size:13px;color:#37474F;margin:0}
+.name{margin:2px 0 18px;font-size:26px;font-weight:700;color:#222}
+.lead{margin:0 0 14px;font-size:17.5px;line-height:1.75;color:#7B1F40}
+.lead b{font-weight:800}
+.hist{margin:20px 0 10px;font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px}
+.hist::before{content:"";width:7px;height:7px;background:#222;display:inline-block}
+.career{list-style:none;font-size:14.5px;line-height:1.95;color:#212121}
+.career li{transition:transform .25s,color .25s}
+.career li:hover{transform:translateX(5px);color:#7B1F40}
+
+/* 오시는 길 */
+.visit{background:#F2F2F2;padding:34px 0 30px}
+.vg{max-width:920px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:minmax(0,344px) minmax(0,1fr);gap:34px;align-items:start}
+.visit h2{margin:6px 0 26px;font-weight:400;font-size:23px;color:#222}
+.visit h4{margin:0 0 3px;font-size:14.5px;font-weight:700;color:#222}
+.visit p{margin:0 0 20px;font-size:14.5px;line-height:1.7}
+.mapbox{overflow:hidden;background:#dfe3e6;aspect-ratio:400/262}
+.mapbox iframe{width:100%;height:100%;border:0;display:block}
+.js .mapbox{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.2,.7,.2,1)}
+.js .in .mapbox{clip-path:inset(0)}
+
+/* 상담문의 */
+.consult{background:#fff;padding:20px 20px;text-align:center}
+.consult a{display:inline-block;width:min(283px,80vw);border-radius:6px;transition:transform .25s,box-shadow .25s;animation:pulse 2.8s 2s ease-in-out infinite}
+.consult a:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 26px -12px rgba(0,40,110,.6);animation:none}
+.consult img{display:block;width:100%;height:auto;border-radius:6px}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,78,158,.35)}50%{box-shadow:0 0 0 12px rgba(31,78,158,0)}}
+
+/* 바닥글 */
+footer{background:#37474F;color:#F0E2B0;padding:44px 0 60px}
+footer .wrap{max-width:920px}
+footer h2{margin:0 0 12px;font-size:20px;font-weight:700;color:#F5E6A8}
+footer p{margin:0 0 8px;font-size:14.5px;line-height:1.7}
+footer a{font-weight:700;display:inline-block;padding:3px 0;border-bottom:1px solid transparent;transition:border-color .2s}
+footer a:hover{border-color:#F5E6A8}
+
+/* 맨 위로 */
+#top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border:0;border-radius:50%;background:#14233B;color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s,transform .3s;z-index:40}
+#top.on{opacity:1;transform:none;pointer-events:auto}
+
+@media (max-width:760px){
+ .tag{display:none}
+ .pf,.vg{grid-template-columns:minmax(0,1fr)}
+ .photo{max-width:360px}
+ .hero{min-height:340px}
+ .btns{flex-wrap:nowrap;gap:8px}
+ .btn{flex:1 1 0;min-width:0;padding:12px 2px;font-size:15px;letter-spacing:-.02em}
+ h1{font-size:32px}
+ .hero p{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .js .up,.js .lf,.js .rt,.js header{opacity:1!important;transform:none!important}
+ .js .photo,.js .mapbox{clip-path:none!important}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header id="hd">
+<div class="hd">
+<a href="#home" aria-label="신우세무회계사무소 처음으로"><img class="logo" data-img="logo" alt="신우세무회계사무소" width="206" height="36"></a>
+<span class="tag">기장/법인사업자/상속/증여/양도</span>
+<span class="sp"></span>
+<nav class="menu" id="menu" aria-label="주요 메뉴">
+<button type="button" aria-expanded="false" aria-haspopup="true">신우세무회계사무소<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></button>
+<div class="dd">
+<a href="#home">신우세무회계사무소</a>
+<a href="#biz">사업자 세무 관리 및 컨설팅</a>
+<a href="#realty">부동산 및 주식 절세 컨설팅</a>
+<a href="#audit">경정청구/조사/불복</a>
+<a href="#visit">오시는 길</a>
+</div>
+</nav>
+</div>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="wrap">
+<h1 class="up" style="--d:.3s">세금의 차이가,<br>미래의 가치를 만듭니다.</h1>
+<p class="up" style="--d:.55s">법인·개인사업자 세무관리부터 부동산·주식 양도, 상속·증여, 세무조사 대응까지.<br>최적의 세무 전략을 제시합니다.</p>
+<div class="btns up" style="--d:.8s">
+<a class="btn b1" href="https://tally.so/r/wgWDql" target="_blank" rel="noopener">온라인 상담문의</a>
+<a class="btn b2" href="tel:027923579">전화 02-792-3579</a>
+</div>
+</div>
+</section>
+
+<div class="sec-title reveal"><h2>전문 업무 서비스</h2></div>
+
+<section class="services">
+<div class="grid">
+<article class="col reveal" id="biz">
+<div class="pic up zoom" style="--d:0.00s"><img data-img="s1" alt="법인사업자와 개인사업자 이미지" loading="lazy" width="1200" height="770"></div>
+<h3 class="up" style="--d:0.15s">사업자 세금 관리 및 절세 컨설팅</h3>
+<p class="desc up" style="--d:0.30s">법인 및 개인사업자의 기장 및 세금신고,<br>절세 컨설팅 업무를 신뢰와 전문성을<br>바탕으로 관리해드립니다.</p>
+<ul><li class="up" style="--d:0.45s">개인/법인 사업자 기장업무</li><li class="up" style="--d:0.52s">법인세 / 종합소득세 / 부가가치세 / 원천세</li><li class="up" style="--d:0.59s">사업자 성실신고확인</li><li class="up" style="--d:0.66s">개인사업자의 법인 전환 절세 컨설팅</li><li class="up" style="--d:0.73s">창업컨설팅/ 세금 감면 컨설팅</li><li class="up" style="--d:0.80s">근로자 4대보험 / 연말정산 등 인건비 신고</li></ul>
+</article>
+<article class="col reveal" id="realty">
+<div class="pic up zoom" style="--d:0.14s"><img data-img="s2" alt="부동산과 주식 절세 이미지" loading="lazy" width="1200" height="770"></div>
+<h3 class="up" style="--d:0.29s">부동산/주식 관련 절세 컨설팅</h3>
+<p class="desc up" style="--d:0.44s">부동산, 주식 등 재산의 매매, 상속, 증여시<br>전문적인 절세 컨설팅 및 신고 대행합니다.</p>
+<ul><li class="up" style="--d:0.59s">부동산, 주식 등의 양도소득세 절세 컨설팅</li><li class="up" style="--d:0.66s">부동산, 주식 등의 증여세/ 상속세 절세 컨설팅</li><li class="up" style="--d:0.73s">비상장주식평가 및 영업권 평가</li><li class="up" style="--d:0.80s">감정평가법인, 법무사, 변리사, 노무사 등<br>다양한 전문직과 연계한 절세컨설팅</li><li class="up" style="--d:0.87s">골프, 콘도 회원권 등 양도소득세 신고</li></ul>
+</article>
+<article class="col reveal" id="audit">
+<div class="pic up zoom" style="--d:0.28s"><img data-img="s3" alt="세무조사와 조세불복 이미지" loading="lazy" width="1200" height="770"></div>
+<h3 class="up" style="--d:0.43s">세무조사 및 조세불복 등 대행</h3>
+<p class="desc up" style="--d:0.58s">개인이나 기업의 세무조사 및<br>소명 요청시 사실관계와 관련 법령을 바탕으로<br>전략을 수립하고 대응합니다.</p>
+<ul><li class="up" style="--d:0.73s">과다하게 낸 세금 경정청구(세금 환급)</li><li class="up" style="--d:0.80s">세무서/ 국세청 세무조사 대응</li><li class="up" style="--d:0.87s">억울한 세금 조세불복 대행</li><li class="up" style="--d:0.94s">민간위탁 보조금 결산 보고 및 검사</li><li class="up" style="--d:1.01s">비영리법인(공익법인) 세무확인</li><li class="up" style="--d:1.08s">기부금단체 공시 및 출연재산보고 등</li></ul>
+</article>
+</div>
+</section>
+
+<section class="profile" id="profile">
+<div class="pf reveal">
+<div class="photo"><img data-img="profile" alt="임광준 세무사" loading="lazy" width="748" height="1024"></div>
+<div>
+<p class="role up" style="--d:.2s">대표세무사</p>
+<h2 class="name up" style="--d:.3s">임광준 세무사</h2>
+<p class="lead up" style="--d:.4s">복잡한 세무 문제를 정확하게 분석하고, 상황에 맞는 해결 방향을 제시합니다.</p>
+<p class="lead up" style="--d:.5s"><b>15년 이상</b>의 세무 실무 경험을 바탕으로 사업자 세무관리와 양도·상속·증여 관련 세무컨설팅을 제공합니다.</p>
+<div class="hist up" style="--d:.6s">주요 약력</div>
+<ul class="career"><li class="up" style="--d:0.50s">국세청 국세상담센터 운영심의회 위원</li><li class="up" style="--d:0.55s">국세청 국민정책참여단 정책혁신 위원</li><li class="up" style="--d:0.60s">국세청 바른세금지킴이 위원</li><li class="up" style="--d:0.65s">서울특별시 시민감사옴브즈만위원회 시민참여옴브즈만</li><li class="up" style="--d:0.70s">세무서 국세심사위원회 위원</li><li class="up" style="--d:0.75s">세무서 납세자보호위원회 위원</li><li class="up" style="--d:0.80s">세무서 영세납세지원단 나눔세무사</li><li class="up" style="--d:0.85s">세무서 민생지원소통추진단 외부위원</li><li class="up" style="--d:0.90s">국선세무대리인</li><li class="up" style="--d:0.95s">구청 결산검사위원</li><li class="up" style="--d:1.00s">구청 공유재산심의위원회 위원</li><li class="up" style="--d:1.05s">구청 금고선정위원회 위원</li><li class="up" style="--d:1.10s">서울신용보증재단 자문</li><li class="up" style="--d:1.15s">용산지역세무사회 간사</li></ul>
+</div>
+</div>
+</section>
+
+<section class="visit" id="visit">
+<div class="vg reveal">
+<div>
+<h2 class="up" style="--d:.1s">🚙 오시는 길 🚗</h2>
+<h4 class="up" style="--d:.2s">🏢 주소</h4>
+<p class="up" style="--d:.25s">서울특별시 용산구 새창로 217, 1303호 (한강로2가, 토투밸리)</p>
+<h4 class="up" style="--d:.3s">🚃 대중교통</h4>
+<p class="up" style="--d:.35s">지하철 신용산역 5번 출구 10미터<br>지하철 용산역 1번 출구 200미터</p>
+<h4 class="up" style="--d:.4s">🚘 주차</h4>
+<p class="up" style="--d:.45s">주차 가능</p>
+<h4 class="up" style="--d:.5s">🕤 업무시간</h4>
+<p class="up" style="--d:.55s">평일 오전 9:30 ~ 오후 5:30 (점심 : 12:00 ~ 13:00)<br>주말/ 공휴일 휴무</p>
+</div>
+<div class="mapbox"><iframe title="신우세무회계사무소 위치 지도" src="https://maps.google.com/maps?hl=ko&ll=37.529271,126.967502&output=embed&q=37.53013,126.96777&z=17" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+</div>
+</section>
+
+<section class="consult reveal">
+<a class="up" href="https://tally.so/r/wgWDql" target="_blank" rel="noopener" aria-label="상담문의"><img data-img="consult" alt="상담문의" loading="lazy" width="800" height="181"></a>
+</section>
+</main>
+
+<footer>
+<div class="wrap reveal">
+<h2 class="up">신우세무회계사무소</h2>
+<p class="up" style="--d:.1s">대표세무사 : 임광준</p>
+<p class="up" style="--d:.2s">서울시 용산구 새창로 217, 1303호(한강로2가, 토투밸리)</p>
+<p class="up" style="--d:.3s">대표전화 : 02-792-3579 / 팩스 : 0508-118-1179</p>
+<p class="up" style="--d:.4s"><a href="http://www.swtax.co.kr/">www.swtax.co.kr</a></p>
+<p class="up" style="--d:.5s"><a href="https://blog.naver.com/wetax" target="_blank" rel="noopener">네이버 블로그</a></p>
+<p class="up" style="--d:.6s"><a href="http://pf.kakao.com/_WxhyqC/" target="_blank" rel="noopener">카카오톡 채널</a></p>
+</div>
+</footer>
+
+<button id="top" type="button" aria-label="맨 위로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+
+<script>
+/* ===== 그림 설정 =====
+   1) images 폴더에 아래 이름(.jpg/.png/.webp 중 아무 형식)으로 그림을 올리면 그 그림을 씁니다.
+   2) 그 파일이 없으면 remote 주소(기존 Google Sites 그림)를 대신 씁니다. */
+var IMG={
+ "logo": {
+  "name": "logo",
+  "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72s5roXlbUm-0cYdFW-uwrMO9qafEEHKf_L7OqEtRzAqF7j4yytITPfZH4tUu36vBsr13R92Xa5IK9fI8eBTngBcAy_m8Zqi_xti1Ep2doURcxMD-mfmn4VN5xvxDPqJcy9YJMWjMRmub2mjRocXI7SmTO3WRUuNwNZ-HKTXj3owcnMWgIGqMnUA3x1tZcw=w16383"
+ },
+ "s1": {
+  "name": "service1",
+  "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72srnrmV1M7aq9bYiwwVQQvJwjEor1SUncljQdMZwl3_dyZ437mAYAd2_wNczBRtsunWZnLf3vvdqVsi3UGuOSIm_t759WX0weqg25eDSIb13MyH7kXMT5QE0NgybSHq7cdNyV0FKNuXERJFlzAg53l0_l4dpAB_lPj1BNcFK-PBpSV1tPAjqpBO1YaOxVCEip3Rlgph4SE3NEYzRk9fJnjDZves_-GHqPHrEQZT3KM=w1280"
+ },
+ "s2": {
+  "name": "service2",
+  "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uarc78tPhMcmMeY3Id-m1tw7Fl_TPp0OqoXDdnqSkeKkDJF6sWvc1WXM1E__KLjT14uiXmGYao7BZNQrgFKIP0pY7vsYZkrYMI9x2bDtBp_6xFgbK9wkmKNeb74K2si9ndtoRWpvFKyBYjlGhCR3dUc8_9FSDP7wwXmAOqGywQAzr-H3rT5rE8GAq4WzBhT8-qdSRvCGVy3d5o4hNL4QlbqsrdKiLePsMqy_mFmfQ=w1280"
+ },
+ "s3": {
+  "name": "service3",
+  "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vA36y3VMNcYXiGHUb-8AGOl916qeyfLa1ROGYZSpqZz8poLqvk6uSq0YuAMCqeZdfIgqOlVL933_lrqrLWpB2cPEloXPk5tGLG21O27XHtRcEDNUBeL6zBQJsAXOf-EkGneQy3XM8sA3wCKJZm_HTaHz54sAtYIuFHwZVUEQUSM-vocrOUQnN9NCoc6D-A-ULnuNbn8G9bI0iv_Nyfhvsefi_12ia363udo9ve=w1280"
+ },
+ "profile": {
+  "name": "profile",
+  "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vYTLq3rAWXmbRA337rftENqhShxvRCncuABk8Ty_EXUM-Nq4wqLRJns9lRzdMpOolw2uYOwKBmJLU0NKIBLWP0uc48OVS8lBivIKeV3MtZpz9EX17qeJLT_8WMCGRGG09cpw48SF7Crs-fji2krumVggjEEhA51j3W0OuhiYiNHMpt6nvQPu4XvNOuJBFjqDxUEdm6M1by8rbwKZwn2J5czirqobECTFkoeCj7=w1280"
+ },
+ "consult": {
+  "name": "consult-button",
+  "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vacYgzZD5V1sVQ31t17pHXg-bAiJ68lte4bNxqq0ygo1I_f3x3aYrloslFP1_Vjl5Fv3EnQ_HkoQ40DZwuHei9G3kQsORlJIHbBDAVp6EB6zHEufvTy6LrLjg3yafd_AdqKe23YOe8S_9wvyH_m-iQL3l3Hm6U2v8yTjyJyDN371A-Vn0IvEvpnf5NZbWeqoYPcqTtiSNvJKfjqR2bpsRSCHceP34oXPHBIOW4=w1280"
+ }
+};
+
+(function(){
+  var imgs=document.querySelectorAll('img[data-img]');
+  imgs.forEach(function(im){
+    var o=IMG[im.getAttribute('data-img')],list=['.jpg','.png','.webp'].map(function(e){return 'images/'+o.name+e}).concat([o.remote]),n=0;
+    im.onerror=function(){n++;if(n<list.length)im.src=list[n];else im.onerror=null};
+    im.src=list[0];
+  });
+  /* 머리글 등장 + 그림자 + 진행 표시줄 + 맨 위로 */
+  var hd=document.getElementById('hd'),bar=document.getElementById('bar'),top=document.getElementById('top');
+  setTimeout(function(){hd.classList.add('on')},50);
+  function onScroll(){
+    var y=window.pageYOffset||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-window.innerHeight;
+    hd.classList.toggle('shadow',y>8);
+    bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+    top.classList.toggle('on',y>500);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  /* 드롭다운 메뉴 */
+  var menu=document.getElementById('menu'),btn=menu.querySelector('button');
+  btn.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  document.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')menu.classList.remove('open')});
+
+  /* 스크롤 등장 효과 */
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  function show(e){e.classList.add('in')}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(function(){document.querySelectorAll('.up').forEach(function(e){if(e.getBoundingClientRect().top<window.innerHeight)e.classList.add('in')})},50);
+  setTimeout(function(){els.forEach(show)},9000);
+})();
+</script>
+</body>
+</html>
