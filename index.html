@@ -317,6 +317,10 @@ footer p{font-size:15.5px}
 .links a{padding:8px 6px;font-size:13px;border-radius:6px;gap:4px}
 .links a svg{width:11px;height:11px}
 @media (max-width:760px){.links .lk{gap:6px}.links a{font-size:13.5px;padding:9px 6px}}
+/* 링크 칸 폭: 글자 길이에 맞춰 좁게 */
+.links .lk,.links .lk{display:flex;flex-wrap:wrap;justify-content:center;max-width:560px;gap:7px}
+.links a{padding:8px 13px}
+@media (max-width:760px){.links .lk{max-width:360px;gap:6px}.links a{padding:9px 12px}}
 </style>
 </head>
 <body>
@@ -423,8 +427,8 @@ footer p{font-size:15.5px}
 </section>
 </main>
 
-<section class="links reveal" aria-label="업무 관련 사이트">
-<h3 class="up">업무 관련 사이트</h3>
+<section class="links reveal" aria-label="업무 관련 주요 사이트">
+<h3 class="up">업무 관련 주요 사이트</h3>
 <div class="lk">
 <a class="up" style="--d:0.00s" href="https://www.nts.go.kr" target="_blank" rel="noopener">국세청<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
 <a class="up" style="--d:0.05s" href="https://www.hometax.go.kr" target="_blank" rel="noopener">홈택스<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
