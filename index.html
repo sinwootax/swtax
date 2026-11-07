@@ -253,6 +253,17 @@ footer a:hover{border-color:#E3C98F}
 .pf .cw .hist{margin-top:0}
 @media (max-width:760px){.pf{grid-template-areas:"photo" "intro" "career";row-gap:22px}}
 @media (min-width:761px){.pf .photo{aspect-ratio:auto;align-self:stretch;position:relative;min-height:300px}.pf .photo img{position:absolute;inset:0;object-position:center top}}
+
+/* 우측 하단 플로팅 문의 버튼 */
+#fab{position:fixed;right:18px;bottom:76px;z-index:55;display:flex;flex-direction:column;gap:10px}
+#fab a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.7);transition:transform .2s;position:relative}
+#fab a:hover{transform:translateY(-3px)}
+#fab svg{width:23px;height:23px}
+#fab .f1{background:linear-gradient(135deg,#E2C98C,#B8924A);color:#14110A}
+#fab .f2{background:#FEE500;color:#2A1B1B}
+#fab .f3{background:#171C25;color:#E2C98C;border:1px solid rgba(201,169,106,.6)}
+#fab a span{position:absolute;right:58px;top:50%;transform:translateY(-50%);background:#171C25;color:#E2C98C;border:1px solid rgba(201,169,106,.4);font-size:13px;padding:5px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+@media (hover:hover){#fab a:hover span{opacity:1}}
 </style>
 </head>
 <body>
@@ -323,7 +334,7 @@ footer a:hover{border-color:#E3C98F}
 </div>
 <div class="cw">
 <div class="hist cr reveal" style="--d:0s" data-t="t32">주요 약력</div>
-<ul class="career reveal"><li class="cr" style="--d:0.00s" data-t="t33">국세청 국세상담센터 운영심의회 위원</li><li class="cr" style="--d:0.07s" data-t="t34">국세청 국민정책참여단 정책혁신 위원</li><li class="cr" style="--d:0.14s" data-t="t35">국세청 바른세금지킴이 위원</li><li class="cr" style="--d:0.21s" data-t="t36">서울특별시 시민감사옴부즈만위원회 시민참여옴부즈만</li><li class="cr" style="--d:0.28s" data-t="t62">서울시립대학교 세무학과 멘토세무사</li><li class="cr" style="--d:0.35s" data-t="t37">세무서 국세심사위원회 위원</li><li class="cr" style="--d:0.42s" data-t="t38">세무서 납세자보호위원회 위원</li><li class="cr" style="--d:0.49s" data-t="t39">세무서 영세납세지원단 나눔세무사</li><li class="cr" style="--d:0.56s" data-t="t40">세무서 민생지원소통추진단 외부위원</li><li class="cr" style="--d:0.63s" data-t="t41">국선세무대리인</li><li class="cr" style="--d:0.70s" data-t="t42">구청 결산검사위원</li><li class="cr" style="--d:0.77s" data-t="t43">구청 공유재산심의위원회 위원</li><li class="cr" style="--d:0.84s" data-t="t44">구청 금고선정위원회 위원</li><li class="cr" style="--d:0.91s" data-t="t63">구청 통합재정안정화기금 운용심의위원회 위원</li><li class="cr" style="--d:0.98s" data-t="t45">서울신용보증재단 자문</li><li class="cr" style="--d:1.05s" data-t="t46">용산지역세무사회 간사</li></ul>
+<ul class="career reveal"><li class="cr" style="--d:0.00s" data-t="t33">국세청 국세상담센터 운영심의회 위원</li><li class="cr" style="--d:0.07s" data-t="t34">국세청 국민정책참여단 정책혁신 위원</li><li class="cr" style="--d:0.14s" data-t="t35">국세청 바른세금지킴이 위원</li><li class="cr" style="--d:0.21s" data-t="t36">서울특별시 시민감사옴부즈만위원회 시민참여옴부즈만</li><li class="cr" style="--d:0.28s" data-t="t62">서울시립대학교 세무학과 멘토세무사</li><li class="cr" style="--d:0.35s" data-t="t37">세무서 국세심사위원회 위원</li><li class="cr" style="--d:0.42s" data-t="t38">세무서 납세자보호위원회 위원</li><li class="cr" style="--d:0.49s" data-t="t39">세무서 영세납세지원단 나눔세무사</li><li class="cr" style="--d:0.56s" data-t="t40">세무서 민생지원소통추진단 외부위원</li><li class="cr" style="--d:0.63s" data-t="t41">국선세무대리인</li><li class="cr" style="--d:0.70s" data-t="t42">구청 결산검사위원</li><li class="cr" style="--d:0.77s" data-t="t43">구청 공유재산심의위원회 위원</li><li class="cr" style="--d:0.84s" data-t="t44">구청 금고선정위원회 위원</li><li class="cr" style="--d:0.91s" data-t="t63">구청 통합재정안정화기금 운용심의위원회 위원</li><li class="cr" style="--d:0.98s" data-t="t45">서울신용보증재단 자문세무사</li><li class="cr" style="--d:1.05s" data-t="t46">용산지역세무사회 간사</li></ul>
 </div>
 </div>
 </section>
@@ -363,6 +374,11 @@ footer a:hover{border-color:#E3C98F}
 </div>
 </footer>
 
+<div id="fab">
+<a class="f1" href="https://tally.so/r/wgWDql" target="_blank" rel="noopener" aria-label="상담문의"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>상담문의</span></a>
+<a class="f2" href="https://pf.kakao.com/_WxhyqC/chat" target="_blank" rel="noopener" aria-label="카카오톡 문의"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.8 5.3 4.6 6.7l-1 3.6c-.1.3.2.6.5.4l4.2-2.8c.5.1 1.1.1 1.7.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span>카카오톡 문의</span></a>
+<a class="f3" href="tel:027923579" aria-label="전화 문의"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>02-792-3579</span></a>
+</div>
 <button id="top" type="button" aria-label="맨 위로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
 
 <script>
