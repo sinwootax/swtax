@@ -302,6 +302,14 @@ footer p{font-size:15.5px}
 @media (max-width:760px){.consult{flex-direction:row;justify-content:center;align-items:stretch;gap:10px;padding-left:14px;padding-right:14px}
 .consult a.cbtn{width:calc(50% - 5px);height:auto;min-height:72px;padding:10px 6px;flex-direction:column;gap:5px;font-size:16px;letter-spacing:0;line-height:1.25;white-space:normal;word-break:keep-all;text-align:center}
 .consult a.cbtn .ci{width:22px;height:22px}}
+
+.links{background:#0C0F14;padding:6px 20px 42px;text-align:center}
+.links h3{margin:0 0 16px;font-size:15px;font-weight:700;color:#C9A96A;letter-spacing:.08em}
+.links .lk{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.links a{display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 8px;border:1px solid rgba(201,169,106,.35);border-radius:8px;background:#141A24;color:#E8D9B5;font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;transition:border-color .2s,background .2s,transform .2s}
+.links a:hover{border-color:#C9A96A;background:#1A212D;transform:translateY(-2px)}
+.links a svg{width:14px;height:14px;opacity:.7;flex:none}
+@media (max-width:760px){.links .lk{grid-template-columns:repeat(2,1fr)}.links a{font-size:16px;padding:14px 8px}}
 </style>
 </head>
 <body>
@@ -407,6 +415,20 @@ footer p{font-size:15.5px}
 <a class="cbtn ck up" style="--d:.15s" href="https://pf.kakao.com/_WxhyqC/chat" target="_blank" rel="noopener"><svg class="ci" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.8 5.3 4.6 6.7l-1 3.6c-.1.3.2.6.5.4l4.2-2.8c.5.1 1.1.1 1.7.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span data-t="t60">카카오톡 채널로 문의하기</span></a>
 </section>
 </main>
+
+<section class="links reveal" aria-label="업무 관련 사이트">
+<h3 class="up">업무 관련 사이트</h3>
+<div class="lk">
+<a class="up" style="--d:0.00s" href="https://www.nts.go.kr" target="_blank" rel="noopener">국세청<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="up" style="--d:0.05s" href="https://www.hometax.go.kr" target="_blank" rel="noopener">홈택스<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="up" style="--d:0.10s" href="https://www.wetax.go.kr" target="_blank" rel="noopener">위택스<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="up" style="--d:0.15s" href="https://taxlaw.nts.go.kr" target="_blank" rel="noopener">국세법령정보<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="up" style="--d:0.20s" href="https://www.work24.go.kr" target="_blank" rel="noopener">고용24<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="up" style="--d:0.25s" href="https://total.comwel.or.kr" target="_blank" rel="noopener">고용산재토탈<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="up" style="--d:0.30s" href="https://www.nhis.or.kr" target="_blank" rel="noopener">건강보험<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="up" style="--d:0.35s" href="https://www.nps.or.kr" target="_blank" rel="noopener">국민연금<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+</div>
+</section>
 
 <footer>
 <div class="wrap reveal">
