@@ -232,6 +232,17 @@ footer a:hover{border-color:#E3C98F}
 @media (max-width:760px){.btns{flex-wrap:wrap}.b3{flex:1 1 100%}}
 .consult a.kbtn{display:inline-flex;align-items:center;justify-content:center;animation:none;border-radius:6px}
 .consult a.kbtn:hover{animation:none}
+
+/* 하단 문의 버튼 2종 (모양·글꼴 통일) */
+.consult a.cbtn{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:min(330px,86vw);height:60px;border-radius:8px;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px;letter-spacing:.06em;white-space:nowrap;animation:none;transition:transform .25s,box-shadow .25s,filter .25s}
+.consult a.cbtn::before{content:"";position:absolute;inset:5px;border:1px solid rgba(20,16,10,.4);border-radius:5px;pointer-events:none}
+.consult a.cbtn .ci{flex:none}
+.consult a.cg{background:linear-gradient(135deg,#F1DDA8 0%,#D9B976 48%,#B48A45 100%);color:#1B1408}
+.consult a.ck{background:linear-gradient(135deg,#FFEE3A 0%,#FEE500 55%,#F2D800 100%);color:#191919}
+.consult a.cbtn:hover{transform:translateY(-3px);filter:brightness(1.05)}
+.consult a.cg:hover{box-shadow:0 14px 28px -12px rgba(201,169,106,.6)}
+.consult a.ck:hover{box-shadow:0 14px 28px -12px rgba(254,229,0,.5)}
+@media (max-width:380px){.consult a.cbtn{font-size:17px;letter-spacing:.02em}}
 </style>
 </head>
 <body>
@@ -323,8 +334,8 @@ footer a:hover{border-color:#E3C98F}
 </section>
 
 <section class="consult reveal">
-<a class="up" href="https://tally.so/r/wgWDql" target="_blank" rel="noopener" aria-label="상담문의"><img data-img="consult" alt="상담문의" loading="lazy" width="800" height="181"></a>
-<a class="kbtn up" style="--d:.15s" href="https://pf.kakao.com/_WxhyqC/chat" target="_blank" rel="noopener"><svg class="kk" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.8 5.3 4.6 6.7l-1 3.6c-.1.3.2.6.5.4l4.2-2.8c.5.1 1.1.1 1.7.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span data-t="t60">카카오톡 채널로 문의하기</span></a>
+<a class="cbtn cg up" href="https://tally.so/r/wgWDql" target="_blank" rel="noopener"><svg class="ci" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span data-t="t61">상담문의</span></a>
+<a class="cbtn ck up" style="--d:.15s" href="https://pf.kakao.com/_WxhyqC/chat" target="_blank" rel="noopener"><svg class="ci" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.8 5.3 4.6 6.7l-1 3.6c-.1.3.2.6.5.4l4.2-2.8c.5.1 1.1.1 1.7.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span data-t="t60">카카오톡 채널로 문의하기</span></a>
 </section>
 </main>
 
@@ -366,10 +377,6 @@ var IMG={
  "profile": {
   "name": "profile",
   "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vYTLq3rAWXmbRA337rftENqhShxvRCncuABk8Ty_EXUM-Nq4wqLRJns9lRzdMpOolw2uYOwKBmJLU0NKIBLWP0uc48OVS8lBivIKeV3MtZpz9EX17qeJLT_8WMCGRGG09cpw48SF7Crs-fji2krumVggjEEhA51j3W0OuhiYiNHMpt6nvQPu4XvNOuJBFjqDxUEdm6M1by8rbwKZwn2J5czirqobECTFkoeCj7=w1280"
- },
- "consult": {
-  "name": "consult-button",
-  "remote": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vacYgzZD5V1sVQ31t17pHXg-bAiJ68lte4bNxqq0ygo1I_f3x3aYrloslFP1_Vjl5Fv3EnQ_HkoQ40DZwuHei9G3kQsORlJIHbBDAVp6EB6zHEufvTy6LrLjg3yafd_AdqKe23YOe8S_9wvyH_m-iQL3l3Hm6U2v8yTjyJyDN371A-Vn0IvEvpnf5NZbWeqoYPcqTtiSNvJKfjqR2bpsRSCHceP34oXPHBIOW4=w1280"
  }
 };
 
