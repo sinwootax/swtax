@@ -265,12 +265,18 @@ footer a:hover{border-color:#E3C98F}
 #fab a span{position:absolute;right:58px;top:50%;transform:translateY(-50%);background:#171C25;color:#E2C98C;border:1px solid rgba(201,169,106,.4);font-size:13px;padding:5px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
 @media (hover:hover){#fab a:hover span{opacity:1}}
 
-/* 추가 분야(공익법인·비영리) 가로형 카드 */
-.col.wide{grid-column:1/-1}
-.col.wide:not(.x){padding-bottom:0}
-.col.wide .wt h3{text-align:left}
-@media (min-width:761px){.col.wide{display:grid;grid-template-columns:1.2fr 1fr;align-items:stretch;gap:0 12px}.col.wide .pic{margin:0;aspect-ratio:auto;position:relative;min-height:270px}.col.wide .pic img{position:absolute;inset:0}.col.wide .wt{margin:0 28px 0 16px;align-self:center;padding:24px 0}.col.wide .wt h3{margin-bottom:18px}}
-@media (max-width:760px){.col.wide .wt h3{text-align:center}}
+/* 추가 분야(공익법인·비영리) 카드: 좁은 화면은 다른 카드와 동일, 넓은 PC만 가로형 */
+.col.wide:not(.x){padding-bottom:24px}
+.col.wide .wt{margin:0 20px}
+.col.wide .wt>*{margin-left:0;margin-right:0}
+@media (min-width:900px){
+.col.wide{grid-column:1/-1;padding-bottom:0!important;display:grid;grid-template-columns:1.2fr 1fr;align-items:stretch;gap:0 12px}
+.col.wide .pic{margin:0;aspect-ratio:auto;position:relative;min-height:270px}
+.col.wide .pic img{position:absolute;inset:0}
+.col.wide .wt{margin:0 28px 0 16px;align-self:center;padding:24px 0}
+.col.wide .wt h3{text-align:left;margin-bottom:12px}
+.col.wide .wt .desc{text-align:left;margin-bottom:16px}
+}
 </style>
 </head>
 <body>
@@ -331,6 +337,7 @@ footer a:hover{border-color:#E3C98F}
 <div class="pic up zoom" style="--d:0.00s"><img data-img="s4" alt="공익법인과 비영리법인 세무 이미지" loading="lazy" width="1200" height="675"></div>
 <div class="wt">
 <h3 class="up" style="--d:0.15s" data-t="t64">공익법인 및 비영리 분야 세무</h3>
+<p class="desc up" style="--d:0.22s">공익법인과 비영리법인의 세무확인, <br>보조금 결산 및 공시 업무를 <br>전문성을 바탕으로 지원합니다.</p>
 <ul><li class="up" style="--d:0.30s" data-t="t25">민간위탁 보조금 결산 보고 및 검사</li><li class="up" style="--d:0.37s" data-t="t26">비영리법인(공익법인) 세무확인</li><li class="up" style="--d:0.44s" data-t="t27">기부금 단체 공시 및 출연재산 보고 등</li></ul>
 </div>
 </article>
