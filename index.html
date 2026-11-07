@@ -324,9 +324,8 @@ footer p{font-size:15.5px}
 .links a img.fv{width:18px;height:18px;border-radius:4px;background:#fff;padding:1px;flex:none;object-fit:contain}
 /* 링크 가로 흐름(마키) */
 .links{overflow:hidden}
-.links .mq{overflow:hidden;max-width:900px;margin:0 auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.links .mq .lk{display:flex;flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:none;gap:8px;padding-right:8px;animation:mq 32s linear infinite}
-.links .mq:hover .lk,.links .mq:active .lk{animation-play-state:paused}
+.links .mq{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;max-width:900px;margin:0 auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.links .mq .lk{display:flex;flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:none;gap:8px;padding-right:8px}
 .links .mq a{flex:none}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.links .mq{-webkit-mask-image:none;mask-image:none;overflow:visible}.links .mq .lk{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.links .mq a[aria-hidden]{display:none}}
@@ -334,6 +333,7 @@ footer p{font-size:15.5px}
 html,body{overflow-x:clip}
 .links h3{font-size:17px;margin-bottom:14px}
 @media (max-width:760px){.links h3{font-size:18px}}
+.links .mq::-webkit-scrollbar{display:none}.links .mq.drag{cursor:grabbing}.links .mq.drag a{pointer-events:none}
 </style>
 </head>
 <body>
@@ -559,7 +559,32 @@ var IMG={
 
   /* 업무 관련 사이트 링크 무한 흐름: 한 벌 복제 */
   (function(){var lk=document.querySelector('.links .lk');if(!lk)return;
-    Array.prototype.slice.call(lk.children).forEach(function(a){var c=a.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;c.classList.remove('up');c.style.removeProperty('--d');lk.appendChild(c)})})();
+    Array.prototype.slice.call(lk.children).forEach(function(a){var c=a.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;c.classList.remove('up');c.style.removeProperty('--d');lk.appendChild(c)});
+    var kids=Array.prototype.slice.call(lk.children),half=kids.length/2;
+    kids.slice(0,half).forEach(function(a){var c=a.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;lk.appendChild(c)});
+    var mq=lk.parentNode;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var unit=0,pos=0,hold=0,down=false,sx=0,sl=0,moved=false,last=0;
+    function calc(){unit=lk.scrollWidth/3;if(!pos)pos=unit;mq.scrollLeft=pos}
+    function pause(ms){hold=Date.now()+ms}
+    function wrap(){if(mq.scrollLeft>=2*unit){mq.scrollLeft-=unit}else if(mq.scrollLeft<unit){mq.scrollLeft+=unit}}
+    function tick(t){
+      if(!unit)calc();
+      if(!down&&Date.now()>hold){pos+=0.4;mq.scrollLeft=pos}else{pos=mq.scrollLeft}
+      if(pos>=2*unit){pos-=unit;mq.scrollLeft=pos}else if(pos<unit){pos+=unit;mq.scrollLeft=pos}
+      requestAnimationFrame(tick)}
+    mq.addEventListener('touchstart',function(){pause(2500)},{passive:true});
+    mq.addEventListener('touchmove',function(){pause(2500)},{passive:true});
+    mq.addEventListener('touchend',function(){pause(1800)},{passive:true});
+    mq.addEventListener('wheel',function(){pause(1800)},{passive:true});
+    mq.addEventListener('mouseenter',function(){pause(1e9)});
+    mq.addEventListener('mouseleave',function(){down=false;mq.classList.remove('drag');pause(800)});
+    mq.addEventListener('mousedown',function(e){down=true;moved=false;sx=e.pageX;sl=mq.scrollLeft;pause(1e9)});
+    window.addEventListener('mousemove',function(e){if(!down)return;var d=e.pageX-sx;if(Math.abs(d)>4){moved=true;mq.classList.add('drag')}mq.scrollLeft=sl-d});
+    window.addEventListener('mouseup',function(){if(!down)return;down=false;mq.classList.remove('drag')});
+    mq.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false}},true);
+    window.addEventListener('resize',function(){unit=0});
+    requestAnimationFrame(tick);
+  })();
 </script>
 </body>
 </html>
