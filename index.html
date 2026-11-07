@@ -334,6 +334,7 @@ html,body{overflow-x:clip}
 .links h3{font-size:17px;margin-bottom:14px}
 @media (max-width:760px){.links h3{font-size:18px}}
 .links .mq::-webkit-scrollbar{display:none}.links .mq.drag{cursor:grabbing}.links .mq.drag a{pointer-events:none}
+.links .mq,.links .mq *{-webkit-user-select:none;user-select:none}.links .mq img{-webkit-user-drag:none}
 </style>
 </head>
 <body>
@@ -582,6 +583,7 @@ var IMG={
     window.addEventListener('mousemove',function(e){if(!down)return;var d=e.pageX-sx;if(Math.abs(d)>4){moved=true;mq.classList.add('drag')}mq.scrollLeft=sl-d});
     window.addEventListener('mouseup',function(){if(!down)return;down=false;mq.classList.remove('drag')});
     mq.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false}},true);
+    mq.addEventListener('dragstart',function(e){e.preventDefault()});
     window.addEventListener('resize',function(){unit=0});
     requestAnimationFrame(tick);
   })();
