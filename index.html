@@ -337,6 +337,12 @@ html,body{overflow-x:clip}
 .links .mq,.links .mq *{-webkit-user-select:none;user-select:none}.links .mq img{-webkit-user-drag:none}
 .links{padding-top:36px}
 @media (max-width:760px){.links{padding-top:32px}}
+.mapcol{min-width:0}
+.navrow{display:flex;gap:8px;margin-bottom:10px}
+.navrow a{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:11px 6px;border:1px solid rgba(201,169,106,.45);border-radius:8px;background:#141A24;color:#E8D9B5;font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;transition:border-color .2s,background .2s}
+.navrow a::before{content:"";width:7px;height:7px;border-radius:50%;background:#C9A96A}
+.navrow a:hover{border-color:#C9A96A;background:#1A212D}
+@media (max-width:760px){.navrow a{font-size:15px;padding:12px 4px}}
 </style>
 </head>
 <body>
@@ -433,7 +439,14 @@ html,body{overflow-x:clip}
 <h4 class="up" style="--d:.5s" data-t="t53">업무시간</h4>
 <p class="up" style="--d:.55s">평일 오전 9:30 ~ 오후 5:30 (점심: 12:00 ~ 13:00)<br>주말 / 공휴일 휴무</p>
 </div>
+<div class="mapcol">
+<div class="navrow up" style="--d:.2s" aria-label="길찾기">
+<a href="https://www.tmapmobility.com" data-app="tmap://route?goalname=%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C&goalx=126.96777&goaly=37.53013" rel="noopener">T맵</a>
+<a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%83%88%EC%B0%BD%EB%A1%9C%20217" data-app="nmap://route/car?dlat=37.53013&dlng=126.96777&dname=%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C&appname=kr.co.swtax" rel="noopener">네이버지도</a>
+<a href="https://map.kakao.com/link/to/%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C,37.53013,126.96777" target="_blank" rel="noopener">카카오맵</a>
+</div>
 <div class="mapbox"><iframe title="신우세무회계사무소 위치 지도" src="https://maps.google.com/maps?hl=ko&ll=37.529271,126.967502&output=embed&q=37.53013,126.96777&z=17" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+</div>
 </div>
 </section>
 
@@ -589,6 +602,16 @@ var IMG={
     window.addEventListener('resize',function(){unit=0});
     requestAnimationFrame(tick);
   })();
+
+  /* 길찾기: 폰에서는 앱 실행, 앱이 없으면 웹으로 이동 */
+  (function(){var mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    document.querySelectorAll('.navrow a[data-app]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        if(!mobile){a.target='_blank';return}
+        e.preventDefault();var web=a.href,t=Date.now();
+        window.location.href=a.getAttribute('data-app');
+        setTimeout(function(){if(!document.hidden&&Date.now()-t<2500)window.open(web,'_blank')},1400);
+      })})})();
 </script>
 </body>
 </html>
