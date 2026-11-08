@@ -90,3 +90,40 @@ html[data-theme="light"] p.note{color:#6B6455}
 html[data-theme="light"] .ol a{background:#fff;color:#3B2B12;border-color:rgba(138,106,47,.4)}
 html[data-theme="light"] .ol a:hover{background:#F3EDE0;border-color:#8A6A2F}
 
+/* 가독성: 줄바꿈·줄간격 (PC/태블릿/모바일) */
+h1,h2,.items h3,.cta h2{text-wrap:balance;overflow-wrap:break-word}
+.intro,.items p,.who li,.cta p,.crumb{text-wrap:pretty;overflow-wrap:break-word}
+.intro{line-height:1.9}
+.items p{line-height:1.9}
+.items li{padding:22px 0}
+.who li{line-height:1.75;padding:9px 0 9px 22px}
+.who li::before{top:20px}
+.cta h2{line-height:1.45}
+.cta p{line-height:1.9;margin-bottom:26px}
+p.note{line-height:1.9}
+@media (min-width:900px){
+ .w{padding:0 28px}
+ .dh{padding:60px 0 40px}
+ .items li{gap:22px;padding:26px 0}
+ .items p{font-size:16.5px}
+}
+@media (min-width:600px) and (max-width:899px){
+ .w{padding:0 32px}
+ .items p{font-size:16px}
+}
+@media (max-width:480px){
+ body{line-height:1.8}
+ .w{padding:0 18px}
+ .dh{padding:34px 0 26px}
+ h1{font-size:27px;line-height:1.4}
+ .intro{font-size:16px}
+ .items li{gap:12px;padding:20px 0}
+ .items h3{font-size:17px}
+ .items p{font-size:15.5px;line-height:1.9}
+ .who li{font-size:15.5px}
+ .cta{padding:46px 0 42px}
+ .cta h2{font-size:23px}
+ .cb{flex-direction:column}
+ .cb>*{width:100%}
+ .ol a{padding:17px 16px}
+}
