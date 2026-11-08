@@ -1,6 +1,6 @@
 (function(){
   /* Web3Forms Access Key. 비어 있으면 기존 Tally 신청서를 사용합니다. */
-  var W3F_KEY='';
+  var W3F_KEY='02b76de7-9a44-4250-91fc-8607719b0ccf';
   var r=document.documentElement;
   /* 진행 표시줄 + 머리글 */
   var bar=document.getElementById('bar'),hd=document.getElementById('hd');
