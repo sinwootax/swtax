@@ -77,7 +77,8 @@
 <form id="aform" class="af" hidden novalidate autocomplete="on">
 <p class="fn">* 상담 내용에 따라 상담료가 발생할 수 있습니다.<br>* 아래 내용을 남겨주시면 연락드리겠습니다.</p>
 <label>상담 분야<select name="category" id="fcat"><option>사업자 세금 관리 및 절세 컨설팅</option><option>부동산/주식 관련 절세 컨설팅</option><option>세무조사 및 조세불복 등 대행</option><option>공익법인 및 비영리 분야 세무</option><option>기타</option></select></label>
-<label>상담 내용 <em>(필수)</em><textarea name="message" rows="5" maxlength="2000" required placeholder="상담받고 싶은 내용을 적어 주세요. 주민등록번호, 계좌번호 등 민감한 개인정보는 입력하지 마세요."></textarea></label>
+<label>상담 내용 한 줄 요약 <em>(필수)</em><input name="summary" type="text" maxlength="100" required placeholder="예) 아파트 양도 시 비과세 가능 여부"></label>
+<label>자세한 내용 <em>(선택)</em><textarea name="message" rows="4" maxlength="2000" placeholder="추가로 알려주실 내용이 있으면 적어 주세요. 주민등록번호, 계좌번호 등 민감한 개인정보는 입력하지 마세요."></textarea></label>
 <label>성함 <em>(필수)</em><input name="name" type="text" maxlength="40" required autocomplete="name"></label>
 <label>연락처 <em>(필수)</em><input name="phone" type="tel" inputmode="numeric" maxlength="13" required autocomplete="tel" placeholder="010-0000-0000"></label>
 <label>이메일 <em>(선택)</em><input name="email" type="email" maxlength="100" autocomplete="email"></label>

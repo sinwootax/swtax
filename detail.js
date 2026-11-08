@@ -38,14 +38,14 @@
     ph.value=o});
   function bad(m,el){err.textContent=m;err.hidden=false;if(el&&el.focus)el.focus()}
   form.addEventListener('submit',function(e){e.preventDefault();
-    var f=form.elements,msg=f.message.value.trim(),nm=f.name.value.trim(),tel=f.phone.value.trim(),em=f.email.value.trim();
-    if(!msg)return bad('상담 내용을 입력해 주세요.',f.message);
+    var f=form.elements,msg=f.message.value.trim(),sm=f.summary.value.trim(),nm=f.name.value.trim(),tel=f.phone.value.trim(),em=f.email.value.trim();
+    if(!sm)return bad('상담 내용을 한 줄로 간단히 적어 주세요.',f.summary);
     if(!nm)return bad('성함을 입력해 주세요.',f.name);
     if(!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(tel))return bad('연락처를 정확히 입력해 주세요. (예: 010-1234-5678)',f.phone);
     if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))return bad('이메일 형식을 확인해 주세요.',f.email);
     if(!f.consent.checked)return bad('개인정보 수집·이용에 동의해 주세요.',f.consent);
     err.hidden=true;sub.disabled=true;sub.textContent='전송 중…';
-    var data={category:f.category.value,message:msg,name:nm,phone:tel,email:em,consent:true,website:f.website.value,page:location.pathname.split('/').pop()};
+    var data={category:f.category.value,summary:sm,message:msg,name:nm,phone:tel,email:em,consent:true,website:f.website.value,page:location.pathname.split('/').pop()};
     var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){if(ctl)ctl.abort()},20000);
     fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data),signal:ctl?ctl.signal:undefined})
       .then(function(r){return r.json()})
