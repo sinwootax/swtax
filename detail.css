@@ -127,3 +127,8 @@ p.note{line-height:1.9}
  .cb>*{width:100%}
  .ol a{padding:17px 16px}
 }
+p.note{font-size:14px;line-height:1.95!important;word-break:keep-all}
+p.note br.m{display:none}
+@media (max-width:600px){p.note br.m{display:inline}p.note{font-size:13.5px}}
+.cta p{word-break:keep-all}
+@media (max-width:600px){.cta p br{display:none}.cta p.note br{display:inline}}
