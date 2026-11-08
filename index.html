@@ -356,6 +356,10 @@ html,body{overflow-x:clip}
 #fab .tg svg{width:18px;height:18px;transition:transform .25s}
 #fab.fcol .tg svg{transform:rotate(180deg)}
 #fab.fcol a{display:none}
+/* 하단 문의 버튼 축소 */
+.consult a.cbtn{width:min(270px,86vw);height:50px;font-size:16px}
+.consult a.cbtn svg{width:19px;height:19px}
+@media (max-width:760px){.consult a.cbtn{width:calc(50% - 5px);height:auto;min-height:58px;padding:8px 6px;font-size:14.5px;gap:4px}.consult a.cbtn .ci,.consult a.cbtn svg{width:19px;height:19px}}
 </style>
 </head>
 <body>
