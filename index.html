@@ -467,13 +467,15 @@ html[data-theme="light"] #top{background:#6F5226;color:#fff}
 
 /* 분야 카드: 작은 그림 + 상세 페이지 링크 */
 .col{position:relative}
-.pic,.col.wide .pic{aspect-ratio:2.3/1}
+.pic{aspect-ratio:1230/986}
+.col.wide .pic{aspect-ratio:1200/675}
+@media (max-width:760px){.col .pic{width:66%;margin:16px auto 22px}}
 .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font:700 14.5px 'Nanum Gothic','Malgun Gothic',sans-serif;color:#D9C7A2;border-bottom:1px solid rgba(208,187,146,.5);padding-bottom:2px}
 .more i{font-style:normal}
 .more::after{content:"";position:absolute;inset:0;z-index:1}
 .col:hover .more{color:#F1E3C3;border-color:#D0BB92}
 .col{cursor:pointer}
-@media (min-width:900px){.col.wide{grid-template-columns:.8fr 1fr}.col.wide .pic{aspect-ratio:auto;min-height:190px}}
+@media (min-width:900px){.col.wide{grid-template-columns:.8fr 1fr;align-items:center}.col.wide .pic{aspect-ratio:1200/675;min-height:0;align-self:center}.col.wide .pic img{position:static}}
 html[data-theme="light"] .more{color:#6F5226;border-color:rgba(111,82,38,.5)}
 html[data-theme="light"] .col:hover .more{color:#3B2B12;border-color:#6F5226}
 </style>
