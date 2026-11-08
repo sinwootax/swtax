@@ -343,6 +343,19 @@ html,body{overflow-x:clip}
 .navrow a::before{content:"";width:7px;height:7px;border-radius:50%;background:#C9A96A}
 .navrow a:hover{border-color:#C9A96A;background:#1A212D}
 @media (max-width:760px){.navrow a{font-size:15px;padding:12px 4px}}
+.navrow a{flex-direction:column;gap:6px;padding:12px 4px 9px;font-size:13px}
+.navrow a::before{display:none}
+.navrow a em{font-style:normal;font-size:13px;font-weight:700}
+.navrow .ni{width:38px;height:38px;border-radius:11px;display:grid;place-items:center}
+.navrow .ni svg{width:22px;height:22px}
+.navrow .nt{background:#E8263B;color:#fff}
+.navrow .nn{background:#03C75A;color:#fff}
+.navrow .nk{background:#FEE500;color:#2A1B1B}
+@media (max-width:760px){.navrow a{font-size:13px;padding:11px 2px 8px}}
+#fab .tg{width:34px;height:34px;align-self:center;border-radius:50%;border:1px solid rgba(201,169,106,.55);background:#171C25;color:#E2C98C;display:grid;place-items:center;cursor:pointer;padding:0;box-shadow:0 6px 16px -6px rgba(0,0,0,.7)}
+#fab .tg svg{width:18px;height:18px;transition:transform .25s}
+#fab.fcol .tg svg{transform:rotate(180deg)}
+#fab.fcol a{display:none}
 </style>
 </head>
 <body>
@@ -441,9 +454,9 @@ html,body{overflow-x:clip}
 </div>
 <div class="mapcol">
 <div class="navrow up" style="--d:.2s" aria-label="길찾기">
-<a href="https://www.tmapmobility.com" data-app="tmap://route?goalname=%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C&goalx=126.96777&goaly=37.53013" rel="noopener">T맵</a>
-<a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%83%88%EC%B0%BD%EB%A1%9C%20217" data-app="nmap://route/car?dlat=37.53013&dlng=126.96777&dname=%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C&appname=kr.co.swtax" rel="noopener">네이버지도</a>
-<a href="https://map.kakao.com/link/to/%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C,37.53013,126.96777" target="_blank" rel="noopener">카카오맵</a>
+<a aria-label="T맵 길찾기" href="https://www.tmapmobility.com" data-app="tmap://route?goalname=%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C&goalx=126.96777&goaly=37.53013" rel="noopener"><span class="ni nt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M12 6v13" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" fill="none"/></svg></span><em>T맵</em></a>
+<a aria-label="네이버지도 길찾기" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%83%88%EC%B0%BD%EB%A1%9C%20217" data-app="nmap://route/car?dlat=37.53013&dlng=126.96777&dname=%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C&appname=kr.co.swtax" rel="noopener"><span class="ni nn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 19V5l10 14V5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span><em>네이버지도</em></a>
+<a aria-label="카카오맵 길찾기" href="https://map.kakao.com/link/to/%EC%8B%A0%EC%9A%B0%EC%84%B8%EB%AC%B4%ED%9A%8C%EA%B3%84%EC%82%AC%EB%AC%B4%EC%86%8C,37.53013,126.96777" target="_blank" rel="noopener"><span class="ni nk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a6.5 6.5 0 0 0-6.5 6.5c0 4.8 6.5 12 6.5 12s6.5-7.2 6.5-12A6.5 6.5 0 0 0 12 2.5z" fill="currentColor"/><circle cx="12" cy="9" r="2.4" fill="#FEE500"/></svg></span><em>카카오맵</em></a>
 </div>
 <div class="mapbox"><iframe title="신우세무회계사무소 위치 지도" src="https://maps.google.com/maps?hl=ko&ll=37.529271,126.967502&output=embed&q=37.53013,126.96777&z=17" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 </div>
@@ -483,7 +496,7 @@ html,body{overflow-x:clip}
 </div>
 </footer>
 
-<div id="fab">
+<div id="fab"><button type="button" class="tg" aria-label="문의 버튼 접기/펼치기" aria-expanded="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
 <a class="f1" href="https://tally.so/r/wgWDql" target="_blank" rel="noopener" aria-label="상담문의"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>상담문의</span></a>
 <a class="f2" href="https://pf.kakao.com/_WxhyqC/chat" target="_blank" rel="noopener" aria-label="카카오톡 문의"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.8 5.3 4.6 6.7l-1 3.6c-.1.3.2.6.5.4l4.2-2.8c.5.1 1.1.1 1.7.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span>카카오톡 문의</span></a>
 <a class="f3" href="tel:027923579" aria-label="전화 문의"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>02-792-3579</span></a>
@@ -612,6 +625,12 @@ var IMG={
         window.location.href=a.getAttribute('data-app');
         setTimeout(function(){if(!document.hidden&&Date.now()-t<2500)window.open(web,'_blank')},1400);
       })})})();
+
+  /* 플로팅 문의 버튼 접기/펼치기 */
+  (function(){var f=document.getElementById('fab');if(!f)return;var b=f.querySelector('.tg');
+    function set(c){f.classList.toggle('fcol',c);b.setAttribute('aria-expanded',c?'false':'true')}
+    try{if(localStorage.getItem('fabCol')==='1')set(true)}catch(e){}
+    b.addEventListener('click',function(){var c=!f.classList.contains('fcol');set(c);try{localStorage.setItem('fabCol',c?'1':'0')}catch(e){}})})();
 </script>
 </body>
 </html>
