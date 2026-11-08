@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
-<script>document.documentElement.className="js"</script>
+<script>document.documentElement.className="js";try{if(localStorage.getItem("theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
@@ -382,6 +382,88 @@ html,body{overflow-x:clip}
 .faqcta{margin:22px 0 0;text-align:center;color:#9AA3B2;font-size:14.5px;line-height:1.8;word-break:keep-all}
 .faqcta a{color:#E2C98C;font-weight:700}
 @media (max-width:760px){.faq{padding:44px 16px 40px}.faq summary{font-size:16px;padding:15px 40px 15px 14px}.faq details p{padding:0 14px 16px 14px;font-size:15.5px}}
+
+/* 밝은/어두운 화면 전환 버튼 */
+.thm{display:flex;align-items:center;gap:6px;height:38px;padding:0 12px;border:1px solid rgba(201,169,106,.5);border-radius:999px;background:transparent;color:#E2C98C;font:700 13px 'Nanum Gothic','Malgun Gothic',sans-serif;cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s}
+.thm:hover{background:rgba(201,169,106,.14);border-color:#C9A96A}
+@media (max-width:420px){.thm{padding:0 9px}.thm .tl{display:none}}
+.hd{gap:8px}.menu button{white-space:nowrap;padding:12px 4px;font-size:14px}
+@media (max-width:360px){.logo{height:28px}.menu button{font-size:13px}.thm{padding:0 8px}}
+.sp+.thm{margin-right:2px}
+
+/* ===== 밝은 화면 ===== */
+html[data-theme="light"]{color-scheme:light;background:#F6F3EC}
+html[data-theme="light"] body{background:#F6F3EC;color:#26231E}
+html[data-theme="light"] ::selection{background:#8A6A2F;color:#fff}
+html[data-theme="light"] #bar{background:#8A6A2F}
+html[data-theme="light"] header{background:rgba(246,243,236,.88);border-bottom:1px solid rgba(60,45,20,.12)}
+html[data-theme="light"] header.shadow{box-shadow:0 8px 24px rgba(60,45,20,.12)}
+html[data-theme="light"] .logo{filter:invert(1) hue-rotate(180deg) brightness(.72) saturate(1.2)}
+html[data-theme="light"] .tag{color:rgba(38,35,30,.7)}
+html[data-theme="light"] .menu button{color:#26231E}
+html[data-theme="light"] .thm{color:#6F5226;border-color:rgba(111,82,38,.5)}
+html[data-theme="light"] .thm:hover{background:rgba(111,82,38,.1);border-color:#6F5226}
+html[data-theme="light"] .dd{background:#fff;border-color:rgba(60,45,20,.14);box-shadow:0 12px 30px rgba(60,45,20,.16)}
+html[data-theme="light"] .dd a{color:#26231E}
+html[data-theme="light"] .dd a:hover{background:#F3EDE0}
+html[data-theme="light"] .hero{background:radial-gradient(ellipse at 78% 18%,rgba(201,169,106,.28),transparent 55%),linear-gradient(180deg,#FBF8F1,#EFE8D8);color:#26231E}
+html[data-theme="light"] .hero::after{background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%)}
+html[data-theme="light"] .hero h1{color:#22201B}
+html[data-theme="light"] .hero h1::before{background:#8A6A2F}
+html[data-theme="light"] .hero p{color:#4A453B}
+html[data-theme="light"] .b1{background:#6F5226;color:#fff}
+html[data-theme="light"] .b2{border-color:rgba(38,35,30,.5);color:#26231E}
+html[data-theme="light"] .b2:hover{background:rgba(38,35,30,.06)}
+html[data-theme="light"] .sec-title{background:#F6F3EC}
+html[data-theme="light"] .sec-title h2{color:#22201B}
+html[data-theme="light"] .sec-title h2::after{background:#8A6A2F}
+html[data-theme="light"] .services{background:linear-gradient(180deg,#F6F3EC,#EFE9DB 40%,#F6F3EC)}
+html[data-theme="light"] .col{background:#fff;border-color:rgba(60,45,20,.12)}
+html[data-theme="light"] .col:hover{box-shadow:0 22px 40px -24px rgba(60,45,20,.35);border-color:rgba(138,106,47,.6)}
+html[data-theme="light"] .pic{background:#E9E3D4}
+html[data-theme="light"] h3{color:#3B2B12}
+html[data-theme="light"] .desc{color:#8A6A2F}
+html[data-theme="light"] .col ul{color:#3A362E}
+html[data-theme="light"] .col li::marker{color:#8A6A2F}
+html[data-theme="light"] .col li:hover{color:#3B2B12}
+html[data-theme="light"] .profile{background:#F6F3EC}
+html[data-theme="light"] .photo{background:#E9E3D4;outline-color:rgba(138,106,47,.5);box-shadow:0 22px 44px -24px rgba(60,45,20,.4)}
+html[data-theme="light"] .role{color:#6B6455}
+html[data-theme="light"] .name{color:#22201B}
+html[data-theme="light"] .lead{color:#6F5226}
+html[data-theme="light"] .hist{color:#22201B}
+html[data-theme="light"] .hist::before{background:#8A6A2F}
+html[data-theme="light"] .career{color:#3A362E}
+html[data-theme="light"] .career li:hover{color:#6F5226}
+html[data-theme="light"] .js .career.in li{border-left-color:rgba(138,106,47,.55)}
+html[data-theme="light"] .faq{background:#EFE9DB}
+html[data-theme="light"] .faq h2{color:#22201B}
+html[data-theme="light"] .faqsub,html[data-theme="light"] .faqcta{color:#6B6455}
+html[data-theme="light"] .faq details{background:#fff;border-color:rgba(60,45,20,.16)}
+html[data-theme="light"] .faq details[open]{border-color:rgba(138,106,47,.7)}
+html[data-theme="light"] .faq summary{color:#3B2B12}
+html[data-theme="light"] .faq summary::before{color:#8A6A2F}
+html[data-theme="light"] .faq summary::after{border-color:#8A6A2F}
+html[data-theme="light"] .faq details p{color:#3A362E}
+html[data-theme="light"] .faqcta a{color:#6F5226}
+html[data-theme="light"] .visit{background:#F6F3EC}
+html[data-theme="light"] .visit h2{color:#22201B}
+html[data-theme="light"] .visit h4{color:#6F5226;border-left-color:#8A6A2F}
+html[data-theme="light"] .visit p{color:#3A362E}
+html[data-theme="light"] .mapbox{background:#E9E3D4}
+html[data-theme="light"] .mapbox iframe{filter:none}
+html[data-theme="light"] .navrow a{background:#fff;color:#3B2B12;border-color:rgba(60,45,20,.2)}
+html[data-theme="light"] .navrow a:hover{background:#F3EDE0;border-color:#8A6A2F}
+html[data-theme="light"] .consult{background:#F6F3EC}
+html[data-theme="light"] .consult a.cp{background:#fff;color:#3B2B12;box-shadow:inset 0 0 0 1px rgba(138,106,47,.7)}
+html[data-theme="light"] .links{background:#F6F3EC}
+html[data-theme="light"] .links h3{color:#6F5226}
+html[data-theme="light"] .links a{background:#fff;color:#3B2B12;border-color:rgba(138,106,47,.4)}
+html[data-theme="light"] .links a:hover{background:#F3EDE0;border-color:#8A6A2F}
+html[data-theme="light"] #fab .f3,html[data-theme="light"] #fab .tg{background:#fff;color:#6F5226;border-color:rgba(138,106,47,.6)}
+html[data-theme="light"] #fab .f1{background:linear-gradient(135deg,#C9A96A,#8A6A2F);color:#fff}
+html[data-theme="light"] #fab a span{background:#fff;color:#6F5226;border-color:rgba(138,106,47,.4)}
+html[data-theme="light"] #top{background:#6F5226;color:#fff}
 </style>
 <link rel="canonical" href="https://www.swtax.co.kr/">
 <meta property="og:type" content="website">
@@ -407,6 +489,7 @@ html,body{overflow-x:clip}
 <a href="#home" aria-label="신우세무회계사무소 처음으로"><img class="logo" data-img="logo" alt="신우세무회계사무소" width="180" height="28"></a>
 <span class="tag" data-t="t01">기장/법인사업자/상속/증여/양도</span>
 <span class="sp"></span>
+<button type="button" id="themeBtn" class="thm" aria-label="밝은 화면으로 바꾸기" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg><span class="tl">밝게</span></button>
 <nav class="menu" id="menu" aria-label="주요 메뉴">
 <button type="button" aria-expanded="false" aria-haspopup="true">전문서비스<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></button>
 <div class="dd">
@@ -695,6 +778,15 @@ var IMG={
     function set(c){f.classList.toggle('fcol',c);b.setAttribute('aria-expanded',c?'false':'true')}
     try{if(localStorage.getItem('fabCol')==='1')set(true)}catch(e){}
     b.addEventListener('click',function(){var c=!f.classList.contains('fcol');set(c);try{localStorage.setItem('fabCol',c?'1':'0')}catch(e){}})})();
+
+  /* 밝은/어두운 화면 전환 */
+  (function(){var b=document.getElementById('themeBtn');if(!b)return;var r=document.documentElement,tl=b.querySelector('.tl');
+    function ui(){var l=r.getAttribute('data-theme')==='light';b.setAttribute('aria-pressed',l?'true':'false');b.setAttribute('aria-label',l?'어두운 화면으로 바꾸기':'밝은 화면으로 바꾸기');tl.textContent=l?'어둡게':'밝게';
+      var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',l?'#F6F3EC':'#0C0F14')}
+    ui();
+    b.addEventListener('click',function(){var l=r.getAttribute('data-theme')==='light';
+      if(l)r.removeAttribute('data-theme');else r.setAttribute('data-theme','light');
+      try{localStorage.setItem('theme',l?'dark':'light')}catch(e){}ui()})})();
 </script>
 </body>
 </html>
