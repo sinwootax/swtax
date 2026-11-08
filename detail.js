@@ -1,6 +1,4 @@
 (function(){
-  /* Web3Forms Access Key. 비어 있으면 기존 Tally 신청서를 사용합니다. */
-  var W3F_KEY='fa2c2ce3-1f67-400d-8c88-c8a3322038f7';
   var r=document.documentElement;
   /* 진행 표시줄 + 머리글 */
   var bar=document.getElementById('bar'),hd=document.getElementById('hd');
@@ -16,45 +14,4 @@
   function ui(){var l=r.getAttribute('data-theme')==='light';b.setAttribute('aria-pressed',l?'true':'false');b.setAttribute('aria-label',l?'어두운 화면으로 바꾸기':'밝은 화면으로 바꾸기');tl.textContent=l?'어둡게':'밝게';var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',l?'#F6F3EC':'#0C0F14')}
   ui();
   b.addEventListener('click',function(){var l=r.getAttribute('data-theme')==='light';if(l)r.removeAttribute('data-theme');else r.setAttribute('data-theme','light');try{localStorage.setItem('theme',l?'dark':'light')}catch(e){}ui()});
-  /* 상담 신청 팝업(Tally) */
-  var modal=document.getElementById('modal'),fr=document.getElementById('mframe'),last=null;
-  var FORM='https://tally.so/';
-  function url(kind,cat){return FORM+kind+'/wgWDql?transparentBackground=1&alignLeft=1&category='+encodeURIComponent('['+cat+'] ')}
-  var form=document.getElementById('aform'),done=document.getElementById('adone'),err=document.getElementById('aerr'),sub=document.getElementById('asub'),foot=document.querySelector('.mfoot');
-  function open(){var cat=document.body.getAttribute('data-cat')||'';last=document.activeElement;
-    document.getElementById('mcat').textContent='상담 분야: '+cat;
-    if(W3F_KEY){fr.hidden=true;done.hidden=true;form.hidden=false;err.hidden=true;sub.disabled=false;sub.textContent='상담 신청하기';
-      form.querySelector('#fcat').value=cat;
-      foot.innerHTML='문의: 전화 <a href="tel:027923579">02-792-3579</a>'}
-    else{document.getElementById('mopen').href=url('r',cat);fr.hidden=false;fr.src=url('embed',cat)}
-    modal.hidden=false;document.body.classList.add('mo');
-    setTimeout(function(){var f=W3F_KEY?form.querySelector('textarea'):modal.querySelector('.mx');if(f)f.focus()},30)}
-  function close(){modal.hidden=true;document.body.classList.remove('mo');fr.removeAttribute('src');if(last&&last.focus)last.focus()}
-  /* 연락처 자동 하이픈 */
-  var ph=form.querySelector('[name=phone]');
-  ph.addEventListener('input',function(){var d=ph.value.replace(/\D/g,'').slice(0,11),o;
-    if(d.indexOf('02')===0){o=d.length<=2?d:d.length<=5?d.slice(0,2)+'-'+d.slice(2):d.length<=9?d.slice(0,2)+'-'+d.slice(2,d.length-4)+'-'+d.slice(-4):d.slice(0,2)+'-'+d.slice(2,6)+'-'+d.slice(6)}
-    else{o=d.length<=3?d:d.length<=7?d.slice(0,3)+'-'+d.slice(3):d.length<=10?d.slice(0,3)+'-'+d.slice(3,d.length-4)+'-'+d.slice(-4):d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7)}
-    ph.value=o});
-  function bad(m,el){err.textContent=m;err.hidden=false;if(el&&el.focus)el.focus()}
-  form.addEventListener('submit',function(e){e.preventDefault();
-    var f=form.elements,msg=f.message.value.trim(),sm=f.summary.value.trim(),nm=f.name.value.trim(),tel=f.phone.value.trim(),em=f.email.value.trim();
-    if(!sm)return bad('상담 내용을 한 줄로 간단히 적어 주세요.',f.summary);
-    if(!nm)return bad('성함을 입력해 주세요.',f.name);
-    if(!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(tel))return bad('연락처를 정확히 입력해 주세요. (예: 010-1234-5678)',f.phone);
-    if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))return bad('이메일 형식을 확인해 주세요.',f.email);
-    if(!f.consent.checked)return bad('개인정보 수집·이용에 동의해 주세요.',f.consent);
-    err.hidden=true;sub.disabled=true;sub.textContent='전송 중…';
-    var when=new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'});
-    var data={access_key:W3F_KEY,subject:'[홈페이지 상담신청] '+f.category.value+' - '+nm+' ('+sm+')',from_name:'신우세무회계사무소 홈페이지',
-      '상담 분야':f.category.value,'성함':nm,'연락처':tel,'한 줄 요약':sm,'자세한 내용':msg||'(입력 없음)','신청자 이메일':em||'(입력 없음)','개인정보 수집·이용 동의':'동의함','접수 시각':when,'신청 페이지':location.pathname.split('/').pop(),botcheck:f.website.value};
-    if(em)data.email=em;
-    var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){if(ctl)ctl.abort()},20000);
-    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data),signal:ctl?ctl.signal:undefined})
-      .then(function(r){return r.json()})
-      .then(function(j){clearTimeout(t);if(j&&j.success){form.hidden=true;done.hidden=false;form.reset();var b=done.querySelector('.sb');if(b)b.focus()}else throw 0})
-      .catch(function(){clearTimeout(t);sub.disabled=false;sub.textContent='상담 신청하기';bad('전송에 실패했습니다. 잠시 후 다시 시도하시거나 전화 02-792-3579로 문의해 주세요.')})});
-  document.querySelectorAll('[data-apply]').forEach(function(a){a.addEventListener('click',open)});
-  modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))close()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close()});
 })();
