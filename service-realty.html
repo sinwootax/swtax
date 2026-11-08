@@ -74,7 +74,23 @@
 <div class="mc">
 <div class="mh"><strong id="mt">상담 신청</strong><button type="button" class="mx" data-close aria-label="닫기">×</button></div>
 <p class="mcat" id="mcat"></p>
-<div class="mf"><iframe id="mframe" title="상담 신청서" loading="lazy"></iframe></div>
+<div class="mf"><iframe id="mframe" title="상담 신청서" loading="lazy"></iframe>
+<form id="aform" class="af" hidden novalidate autocomplete="on">
+<p class="fn">* 상담 내용에 따라 상담료가 발생할 수 있습니다.<br>* 아래 내용을 남겨주시면 연락드리겠습니다.</p>
+<label>상담 분야<select name="category" id="fcat"><option>사업자 세금 관리 및 절세 컨설팅</option><option>부동산/주식 관련 절세 컨설팅</option><option>세무조사 및 조세불복 등 대행</option><option>공익법인 및 비영리 분야 세무</option><option>기타</option></select></label>
+<label>상담 내용 <em>(필수)</em><textarea name="message" rows="5" maxlength="2000" required placeholder="상담받고 싶은 내용을 적어 주세요. 주민등록번호, 계좌번호 등 민감한 개인정보는 입력하지 마세요."></textarea></label>
+<label>성함 <em>(필수)</em><input name="name" type="text" maxlength="40" required autocomplete="name"></label>
+<label>연락처 <em>(필수)</em><input name="phone" type="tel" inputmode="numeric" maxlength="13" required autocomplete="tel" placeholder="010-0000-0000"></label>
+<label>이메일 <em>(선택)</em><input name="email" type="email" maxlength="100" autocomplete="email"></label>
+<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<fieldset class="cs"><legend>개인정보 수집·이용 동의 (필수)</legend>
+<div class="ct">신우세무회계사무소는 「개인정보 보호법」에 따라 상담 신청을 위해 아래와 같이 개인정보를 수집·이용합니다.<br><br><b>① 수집·이용 목적</b><br>세무 상담 신청 접수, 상담 일정 안내 및 회신<br><br><b>② 수집 항목</b><br>상담분야, 상담내용, 성함, 연락처, 이메일(선택)<br><br><b>③ 보유 및 이용 기간</b><br>상담 종료 후 1년간 보관하며, 보유 기간이 지나면 지체 없이 파기합니다. 다만 관계 법령에 따라 보존해야 하는 경우에는 해당 기간 동안 보관합니다.<br><br><b>④ 동의 거부 권리 및 불이익</b><br>귀하는 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 다만 동의하지 않으실 경우 온라인 상담 신청이 제한됩니다. 이 경우 전화(02-792-3579)로 문의해 주세요.<br><br>※ 상담 내용란에는 주민등록번호, 계좌번호 등 민감한 개인정보를 입력하지 마세요.</div>
+<label class="ck"><input type="checkbox" name="consent" required> 위 개인정보 수집·이용에 동의합니다.</label></fieldset>
+<p class="er" id="aerr" role="alert" hidden></p>
+<button type="submit" class="sb" id="asub">상담 신청하기</button>
+</form>
+<div id="adone" class="ad" hidden><div class="ok">✓</div><h3>상담 신청이 접수되었습니다</h3><p>확인 후 남겨주신 연락처로 연락드리겠습니다.<br>급하신 경우 전화 02-792-3579로 문의해 주세요.</p><button type="button" class="sb" data-close>닫기</button></div>
+</div>
 <p class="mfoot">신청서가 보이지 않으면 <a id="mopen" href="https://tally.so/r/wgWDql" target="_blank" rel="noopener">새 창에서 열기</a> 또는 전화 <a href="tel:027923579">02-792-3579</a></p>
 </div></div>
 <script src="detail.js"></script>
