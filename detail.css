@@ -130,3 +130,30 @@ p.note{line-height:1.9}
 p.note{font-size:14px;line-height:1.95!important;word-break:keep-all}
 @media (max-width:600px){p.note{font-size:13.5px}}
 .cta p{word-break:keep-all}
+/* FAQ 상세 페이지 */
+.art{padding:10px 0 30px}
+.ansbox{margin:6px 0 10px;padding:22px 22px;border:1px solid rgba(201,169,106,.5);border-left:4px solid #C9A96A;border-radius:10px;background:#141A24;color:#F1E3C3;line-height:1.95;font-size:17px;word-break:keep-all;overflow-wrap:break-word}
+.ansbox b{display:block;margin-bottom:8px;font:800 14px 'Nanum Gothic','Malgun Gothic',sans-serif;color:#C9A96A;letter-spacing:.06em}
+.art h2{margin:40px 0 12px}
+.art h2 .no{display:inline-block;min-width:28px;color:#C9A96A;font-weight:400}
+.art p.tx{margin:0 0 12px;font-size:16.5px;line-height:1.95;color:#D9D6CF;word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
+.art ul.bl{list-style:none;margin:0 0 12px;padding:0}
+.art ul.bl li{position:relative;padding:7px 0 7px 22px;font-size:16.5px;line-height:1.85;color:#D9D6CF;word-break:keep-all;overflow-wrap:break-word}
+.art ul.bl li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;background:#C9A96A}
+.docs{margin:36px 0 0;padding:20px 22px;border-radius:10px;background:#11151C}
+.docs h3{margin:0 0 8px;font:800 16px 'Nanum Gothic','Malgun Gothic',sans-serif;color:#E3C98F}
+.docs ul{list-style:none;margin:0;padding:0}
+.docs li{position:relative;padding:6px 0 6px 24px;font-size:15.5px;line-height:1.8;color:#D9D6CF;word-break:keep-all}
+.docs li::before{content:"✓";position:absolute;left:2px;color:#C9A96A;font-weight:700}
+.disc{margin:22px 0 0;font-size:13.5px;line-height:1.8;color:#9AA3B2;word-break:keep-all}
+.svcl{display:inline-block;margin-top:18px;color:#E2C98C;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(226,201,140,.5)}
+html[data-theme="light"] .ansbox{background:#fff;color:#3B2B12;border-color:rgba(138,106,47,.5);border-left-color:#8A6A2F}
+html[data-theme="light"] .ansbox b,html[data-theme="light"] .art h2 .no{color:#8A6A2F}
+html[data-theme="light"] .art p.tx,html[data-theme="light"] .art ul.bl li,html[data-theme="light"] .docs li{color:#3A362E}
+html[data-theme="light"] .art ul.bl li::before{background:#8A6A2F}
+html[data-theme="light"] .docs{background:#EFE9DB}
+html[data-theme="light"] .docs h3{color:#6F5226}
+html[data-theme="light"] .docs li::before{color:#8A6A2F}
+html[data-theme="light"] .disc{color:#6B6455}
+html[data-theme="light"] .svcl{color:#6F5226;border-color:rgba(111,82,38,.5)}
+@media (max-width:480px){.ansbox{padding:18px 16px;font-size:16px}.art p.tx,.art ul.bl li{font-size:15.5px}.art h2{margin-top:32px}}
