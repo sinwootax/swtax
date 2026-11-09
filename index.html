@@ -446,6 +446,25 @@ html[data-theme="light"] .faq summary::before{color:#8A6A2F}
 html[data-theme="light"] .faq summary::after{border-color:#8A6A2F}
 html[data-theme="light"] .faq details p{color:#3A362E}
 html[data-theme="light"] .faqcta a{color:#6F5226}
+/* 세무 전문자료 · 상담사례 */
+.cases{background:#0C0F14;padding:56px 20px 44px}
+.casew{max-width:760px;margin:0 auto}
+.cases h2{margin:0 0 10px;text-align:center;font-weight:400;font-size:clamp(26px,4vw,36px);color:#F1EEE7}
+.casesub{margin:0 auto 26px;text-align:center;color:#9AA3B2;font-size:14px;line-height:1.7;word-break:keep-all;max-width:560px}
+.cl{display:grid;gap:12px}
+.cc{display:block;text-align:left;padding:20px 22px;border-radius:12px;background:#141A24;border:1px solid rgba(201,169,106,.28);text-decoration:none;transition:border-color .2s,transform .2s}
+.cc:hover{border-color:#C9A96A;transform:translateY(-2px)}
+.cc h3{margin:0 0 8px;font:800 17.5px/1.5 'Nanum Gothic','Malgun Gothic',sans-serif;color:#F1E3C3;word-break:keep-all}
+.cc p{margin:0;font-size:14px;line-height:1.7;color:#9AA3B2;word-break:keep-all}
+.cnote{margin:20px 0 0;text-align:center;color:#8C94A3;font-size:13.5px;line-height:1.8;word-break:keep-all}
+html[data-theme="light"] .cases{background:#F6F3EC}
+html[data-theme="light"] .cases h2{color:#22201B}
+html[data-theme="light"] .casesub,html[data-theme="light"] .cnote,html[data-theme="light"] .cc p{color:#6B6455}
+html[data-theme="light"] .cc{background:#fff;border-color:rgba(60,45,20,.16)}
+html[data-theme="light"] .cc:hover{border-color:rgba(138,106,47,.7)}
+html[data-theme="light"] .cc h3{color:#3B2B12}
+@media (max-width:760px){.cases{padding:44px 16px 36px}.cc{padding:18px 16px}.cc h3{font-size:16.5px}}
+
 .faq .fmore{display:inline-block;margin-left:4px;color:#E2C98C;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(226,201,140,.5);white-space:nowrap}
 html[data-theme="light"] .faq .fmore{color:#6F5226;border-color:rgba(111,82,38,.5)}
 
@@ -546,6 +565,7 @@ html[data-theme="light"] .col:hover .more{color:#3B2B12;border-color:#6F5226}
 <a href="#realty" data-t="t03">부동산·주식 양도·상속·증여세 컨설팅</a>
 <a href="#audit" data-t="t04">세무조사 및 조세불복 등 대행</a>
 <a href="#public" data-t="t64">공익법인 및 비영리 분야 세무</a>
+<a href="#cases">세무 전문자료·상담사례</a>
 <a href="#faq">자주 묻는 질문</a>
 <a href="#visit" data-t="t05">오시는 길</a>
 </div>
@@ -627,42 +647,57 @@ html[data-theme="light"] .col:hover .more{color:#3B2B12;border-color:#6F5226}
 </div>
 </section>
 
+<section class="cases reveal" id="cases">
+<div class="casew">
+<h2 class="up">세무 전문자료 · 상담사례</h2>
+<p class="casesub up" style="--d:.1s">상담에서 자주 접하는 유형을 바탕으로 재구성한 예시 사례입니다. 실제 의뢰인의 정보가 아니며, 개별 상황에 따라 결과는 달라질 수 있습니다.</p>
+<div class="cl">
+<a class="cc up" style="--d:0.06s" href="case-low-price-transfer.html"><h3>사례 1. 부모가 자녀에게 부동산을 저가양도하는 경우</h3><p>양도소득세 · 증여세 · 특수관계인 거래</p></a>
+<a class="cc up" style="--d:0.12s" href="case-corp-conversion.html"><h3>사례 2. 개인사업자를 법인으로 전환하는 경우의 절세 효과</h3><p>법인전환 · 취득세 · 양도소득세 · 소득세</p></a>
+<a class="cc up" style="--d:0.18s" href="case-unlisted-stock.html"><h3>사례 3. 비상장법인 주식 증여 시 주식가치 평가</h3><p>비상장주식 · 상증세법상 보충적 평가</p></a>
+<a class="cc up" style="--d:0.24s" href="case-inheritance-appraisal.html"><h3>사례 4. 상속 부동산의 감정평가와 상속세</h3><p>상속재산 평가 · 감정평가 · 상속세 신고</p></a>
+<a class="cc up" style="--d:0.30s" href="case-tax-appeal.html"><h3>사례 5. 세무조사 이후 과세처분에 대한 조세불복</h3><p>세무조사 · 과세전적부심사 · 심판청구</p></a>
+</div>
+<p class="cnote up">각 사례는 구체적인 상담 상황, 문제가 되는 세법 쟁점, 관련 법령과 검토 내용, 절세 또는 해결 방안, 유의사항과 결론 순서로 구성했습니다.</p>
+</div>
+</section>
+
 <section class="faq reveal" id="faq">
 <div class="faqw">
 <h2 class="up">자주 묻는 질문</h2>
 <p class="faqsub up" style="--d:.1s">세금 신고 일정과 절차에 대해 자주 문의하시는 내용입니다. 2026년 11월 기준 일반 안내이며, 세법 개정과 개별 상황에 따라 달라질 수 있습니다.</p>
 <div class="ftabs" role="tablist" aria-label="분야별 자주 묻는 질문"><button type="button" role="tab" id="ft-biz" aria-controls="fp-biz" aria-selected="true" data-tab="biz">법인·사업자</button><button type="button" role="tab" id="ft-inherit" aria-controls="fp-inherit" aria-selected="false" data-tab="inherit">상속·증여·양도</button><button type="button" role="tab" id="ft-public" aria-controls="fp-public" aria-selected="false" data-tab="public">공익·비영리법인</button><button type="button" role="tab" id="ft-audit" aria-controls="fp-audit" aria-selected="false" data-tab="audit">세무조사·조세불복·경정청구</button><button type="button" role="tab" id="ft-gen" aria-controls="fp-gen" aria-selected="false" data-tab="gen">상담·일반</button></div>
 <div class="fp" role="tabpanel" id="fp-biz" aria-labelledby="ft-biz">
-<details><summary>개인사업자를 법인으로 전환하는 것이 유리한가요?</summary><p>소득이 일정 규모 이상으로 커지면 법인세율이 소득세율보다 낮아 유리한 경우가 많습니다. 하지만 법인은 대표자의 급여·배당에 다시 과세되고, 자금을 자유롭게 인출하기 어려우며 회계와 4대보험 등 관리 부담도 늘어납니다. 이익 규모, 업종, 인건비, 향후 자금 계획을 놓고 개인과 법인의 세금을 비교한 뒤 결정하시는 것이 좋습니다. <a class="fmore" href="faq-corp-conversion.html">자세히 보기 →</a></p></details>
-<details><summary>법인 대표자의 급여와 배당은 어떻게 결정해야 하나요?</summary><p>급여는 법인의 비용으로 처리되지만 대표자에게는 근로소득세와 4대보험이 부과됩니다. 배당은 법인의 비용이 아니며, 이익잉여금을 재원으로 주주에게 지분율대로 지급하는 것입니다. 대표자가 주주인 경우 배당소득으로 과세되고, 금융소득이 일정 금액을 넘으면 종합과세됩니다. 급여는 임원 보수 지급 규정 등 합리적인 기준이 있어야 하고, 배당은 주주총회 결의 등 절차를 거쳐 지분율에 맞게 지급해야 합니다. 법인세, 소득세, 건강보험료를 함께 계산해 비율을 정하시는 것이 좋습니다. <a class="fmore" href="faq-ceo-pay-dividend.html">자세히 보기 →</a></p></details>
-<details><summary>법인 가지급금은 어떻게 해결해야 하나요?</summary><p>가지급금은 대표자 등이 법인에서 가져가 업무와 관련 없이 쓴 돈으로 처리되는 금액입니다. 이자를 받지 않으면 법에서 정한 인정이자가 계산되어 법인세와 소득세 부담이 생기고, 관련 지급이자는 비용으로 인정되지 않을 수 있습니다. 해결 방법으로는 직접 상환, 급여·상여·배당 재원으로 정리, 업무 관련 지출이 누락되지 않았는지 증빙 확인 등이 있습니다. 규모와 자금 사정에 맞는 방법을 먼저 정해야 합니다. <a class="fmore" href="faq-suspense-payment.html">자세히 보기 →</a></p></details>
-<details><summary>법인이 부동산을 취득하거나 양도할 때 주의할 점은 무엇인가요?</summary><p>법인은 개인과 다른 규정이 적용됩니다. 주택을 취득하면 취득세가 중과될 수 있고, 주택이나 비사업용 토지를 양도하면 법인세 외에 추가 과세가 있을 수 있습니다. 업무와 관련 없는 부동산은 관련 이자 비용이 인정되지 않을 수 있습니다. 대표자와 거래하는 경우에는 시가 기준이 적용되므로 거래 전에 세금을 검토해 보세요. <a class="fmore" href="faq-corp-real-estate.html">자세히 보기 →</a></p></details>
-<details><summary>개인사업자는 세금 신고를 언제 하나요?</summary><p>일반과세자는 부가가치세를 연 2회(1월, 7월) 확정신고하고, 종합소득세는 다음 해 5월에 신고합니다. 성실신고확인 대상 사업자는 6월 말까지 신고합니다. 업종과 매출 규모에 따라 달라질 수 있어 사업 형태별로 일정을 안내해 드립니다. <a class="fmore" href="faq-sole-prop-filing.html">자세히 보기 →</a></p></details>
-<details><summary>법인은 어떤 세금 신고를 하나요?</summary><p>법인세는 사업연도 종료일이 속하는 달의 말일부터 3개월 이내에 신고합니다(12월 결산 법인은 다음 해 3월 말). 부가가치세는 예정신고와 확정신고를 합쳐 연 4회 신고합니다. 이 밖에 원천세, 4대보험 관련 신고도 정기적으로 챙겨야 합니다. <a class="fmore" href="faq-corp-filing.html">자세히 보기 →</a></p></details>
+<details><summary>개인사업자를 법인으로 전환하는 것이 유리한가요?</summary><p>소득이 일정 규모 이상으로 커지면 법인세율이 소득세율보다 낮아 유리한 경우가 많습니다. 하지만 법인은 대표자의 급여·배당에 다시 과세되고, 자금을 자유롭게 인출하기 어려우며 회계와 4대보험 등 관리 부담도 늘어납니다. 이익 규모, 업종, 인건비, 향후 자금 계획을 놓고 개인과 법인의 세금을 비교한 뒤 결정하시는 것이 좋습니다.  <a class="fmore" href="faq-corp-conversion.html">자세히 보기 →</a></p></details>
+<details><summary>법인 대표자의 급여와 배당은 어떻게 결정해야 하나요?</summary><p>급여는 법인의 비용으로 처리되지만 대표자에게는 근로소득세와 4대보험이 부과됩니다. 배당은 법인의 비용이 아니며, 이익잉여금을 재원으로 주주에게 지분율대로 지급하는 것입니다. 대표자가 주주인 경우 배당소득으로 과세되고, 금융소득이 일정 금액을 넘으면 종합과세됩니다. 급여는 임원 보수 지급 규정 등 합리적인 기준이 있어야 하고, 배당은 주주총회 결의 등 절차를 거쳐 지분율에 맞게 지급해야 합니다. 법인세, 소득세, 건강보험료를 함께 계산해 비율을 정하시는 것이 좋습니다.  <a class="fmore" href="faq-ceo-pay-dividend.html">자세히 보기 →</a></p></details>
+<details><summary>법인 가지급금은 어떻게 해결해야 하나요?</summary><p>가지급금은 대표자 등이 법인에서 가져가 업무와 관련 없이 쓴 돈으로 처리되는 금액입니다. 이자를 받지 않으면 법에서 정한 인정이자가 계산되어 법인세와 소득세 부담이 생기고, 관련 지급이자는 비용으로 인정되지 않을 수 있습니다. 해결 방법으로는 직접 상환, 급여·상여·배당 재원으로 정리, 업무 관련 지출이 누락되지 않았는지 증빙 확인 등이 있습니다. 규모와 자금 사정에 맞는 방법을 먼저 정해야 합니다.  <a class="fmore" href="faq-suspense-payment.html">자세히 보기 →</a></p></details>
+<details><summary>법인이 부동산을 취득하거나 양도할 때 주의할 점은 무엇인가요?</summary><p>법인은 개인과 다른 규정이 적용됩니다. 주택을 취득하면 취득세가 중과될 수 있고, 주택이나 비사업용 토지를 양도하면 법인세 외에 추가 과세가 있을 수 있습니다. 업무와 관련 없는 부동산은 관련 이자 비용이 인정되지 않을 수 있습니다. 대표자와 거래하는 경우에는 시가 기준이 적용되므로 거래 전에 세금을 검토해 보세요.  <a class="fmore" href="faq-corp-real-estate.html">자세히 보기 →</a></p></details>
+<details><summary>개인사업자는 세금 신고를 언제 하나요?</summary><p>일반과세자는 부가가치세를 연 2회(1월, 7월) 확정신고하고, 종합소득세는 다음 해 5월에 신고합니다. 성실신고확인 대상 사업자는 6월 말까지 신고합니다. 업종과 매출 규모에 따라 달라질 수 있어 사업 형태별로 일정을 안내해 드립니다.  <a class="fmore" href="faq-sole-prop-filing.html">자세히 보기 →</a></p></details>
+<details><summary>법인은 어떤 세금 신고를 하나요?</summary><p>법인세는 사업연도 종료일이 속하는 달의 말일부터 3개월 이내에 신고합니다(12월 결산 법인은 다음 해 3월 말). 부가가치세는 예정신고와 확정신고를 합쳐 연 4회 신고합니다. 이 밖에 원천세, 4대보험 관련 신고도 정기적으로 챙겨야 합니다.  <a class="fmore" href="faq-corp-filing.html">자세히 보기 →</a></p></details>
 </div>
 <div class="fp" role="tabpanel" id="fp-inherit" aria-labelledby="ft-inherit" hidden>
-<details><summary>부모가 자녀에게 부동산을 저가양도하면 증여세가 발생하나요?</summary><p>네, 발생할 수 있습니다. 부모와 자녀 같은 특수관계인 사이에서 시가보다 낮은 가격으로 양도하면, 시가와 실제 대가의 차액이 시가의 30% 이상이거나 3억원 이상인 경우 그 차액(일정 금액 차감 후)에 증여세가 과세됩니다. 또 양도하는 쪽은 시가 기준으로 양도소득세가 계산될 수 있고, 자녀가 낸 매매대금의 자금출처도 확인될 수 있습니다. 거래 전에 시가 확인과 세금 비교를 해 보시는 것이 좋습니다. <a class="fmore" href="faq-low-price-transfer.html">자세히 보기 →</a></p></details>
-<details><summary>상속세 신고 시 부동산 감정평가는 반드시 필요한가요?</summary><p>반드시 필요한 것은 아닙니다. 상속재산은 시가로 평가하는 것이 원칙이고, 시가를 확인하기 어려우면 공시가격 등 기준시가로 평가합니다. 다만 기준시가로 신고하더라도 세무서가 감정평가를 의뢰해 그 감정가액으로 과세할 수 있고, 반대로 감정평가를 받으면 그 금액이 시가로 인정되어 세금이 늘거나 줄 수 있습니다. 재산 규모와 부동산 종류에 따라 유불리가 다르므로 신고 전에 비교해 보시기를 권합니다. <a class="fmore" href="faq-inheritance-appraisal.html">자세히 보기 →</a></p></details>
-<details><summary>상속 전 사전증여와 상속 중 어느 쪽이 유리한가요?</summary><p>재산 규모와 시기, 가족 구성에 따라 달라 일률적으로 말씀드리기 어렵습니다. 사전증여는 증여 후 재산가치가 오르는 경우 그 상승분이 상속재산에서 빠지는 장점이 있지만, 상속인에게 한 증여는 상속개시 전 10년(상속인이 아닌 사람은 5년) 이내이면 상속재산에 합산됩니다. 증여세와 취득세 부담, 증여재산공제와 상속공제까지 함께 비교해야 하므로 증여 전에 미리 시뮬레이션해 보시는 것이 좋습니다. <a class="fmore" href="faq-gift-vs-inherit.html">자세히 보기 →</a></p></details>
-<details><summary>비상장주식 증여 시 주식가치는 어떻게 평가하나요?</summary><p>거래 사례 등 시가가 있으면 시가로 평가합니다. 시가가 없으면 법에서 정한 보충적 평가 방법에 따라 1주당 순손익가치와 순자산가치를 가중평균하여 평가하며(일반 법인은 순손익가치 3 : 순자산가치 2, 부동산 비중이 높은 법인은 2 : 3), 순자산가치의 80%보다 낮게 평가되지 않습니다. 최대주주 등의 주식에는 경영권 프리미엄에 따른 할증이 붙을 수 있습니다. 법인의 최근 재무자료가 필요하므로 증여 시기를 정하기 전에 평가부터 해 보시는 것이 좋습니다. <a class="fmore" href="faq-unlisted-stock.html">자세히 보기 →</a></p></details>
-<details><summary>다주택자의 부동산 양도 시 절세 방법은 무엇인가요?</summary><p>먼저 양도하려는 주택이 비과세나 중과 대상인지부터 확인해야 합니다. 일시적 2주택, 상속주택 특례 등 비과세 요건을 갖추었는지, 장기보유특별공제를 받을 수 있는지를 보고, 여러 채를 팔 때는 양도 순서와 시기를 조정해 세 부담을 줄일 수 있습니다. 취득가액과 필요경비 증빙을 챙기는 것도 중요합니다. 중과와 유예 규정은 세법 개정으로 자주 바뀌므로 매매계약 전에 최신 규정으로 검토받으시기를 권합니다. <a class="fmore" href="faq-multi-home-transfer.html">자세히 보기 →</a></p></details>
-<details><summary>부동산을 팔면 양도소득세는 언제까지 신고하나요?</summary><p>양도일이 속하는 달의 말일부터 2개월 이내에 예정신고와 납부를 해야 합니다. 양도일은 대금을 청산한 날과 등기접수일 중 빠른 날입니다. 1세대 1주택 비과세, 장기보유특별공제 등은 요건에 따라 세금 차이가 크므로 매매계약 전에 미리 상담받으시는 것이 좋습니다. <a class="fmore" href="faq-transfer-tax-deadline.html">자세히 보기 →</a></p></details>
-<details><summary>상속세는 언제까지 신고해야 하나요?</summary><p>상속개시일(사망일)이 속하는 달의 말일부터 6개월 이내에 신고하고 납부해야 합니다. 피상속인이나 상속인이 해외에 주소를 둔 경우에는 9개월입니다. 세액이 없어 보이는 경우에도 공제 적용과 재산 평가를 확인한 뒤 진행하시는 것이 안전합니다. <a class="fmore" href="faq-inheritance-tax-deadline.html">자세히 보기 →</a></p></details>
-<details><summary>증여세는 언제 신고하고, 증여는 합산되나요?</summary><p>증여받은 날이 속하는 달의 말일부터 3개월 이내에 신고하고 납부해야 합니다. 같은 사람(배우자, 직계존비속 등)에게서 받은 증여는 10년 동안 합산해 증여재산공제를 적용하므로, 이전에 받은 증여가 있는지 먼저 확인해야 합니다. <a class="fmore" href="faq-gift-tax-deadline.html">자세히 보기 →</a></p></details>
+<details><summary>부모가 자녀에게 부동산을 저가양도하면 증여세가 발생하나요?</summary><p>네, 발생할 수 있습니다. 부모와 자녀 같은 특수관계인 사이에서 시가보다 낮은 가격으로 양도하면, 시가와 실제 대가의 차액이 시가의 30% 이상이거나 3억원 이상인 경우 그 차액(일정 금액 차감 후)에 증여세가 과세됩니다. 또 양도하는 쪽은 시가 기준으로 양도소득세가 계산될 수 있고, 자녀가 낸 매매대금의 자금출처도 확인될 수 있습니다. 거래 전에 시가 확인과 세금 비교를 해 보시는 것이 좋습니다.  <a class="fmore" href="faq-low-price-transfer.html">자세히 보기 →</a></p></details>
+<details><summary>상속세 신고 시 부동산 감정평가는 반드시 필요한가요?</summary><p>반드시 필요한 것은 아닙니다. 상속재산은 시가로 평가하는 것이 원칙이고, 시가를 확인하기 어려우면 공시가격 등 기준시가로 평가합니다. 다만 기준시가로 신고하더라도 세무서가 감정평가를 의뢰해 그 감정가액으로 과세할 수 있고, 반대로 감정평가를 받으면 그 금액이 시가로 인정되어 세금이 늘거나 줄 수 있습니다. 재산 규모와 부동산 종류에 따라 유불리가 다르므로 신고 전에 비교해 보시기를 권합니다.  <a class="fmore" href="faq-inheritance-appraisal.html">자세히 보기 →</a></p></details>
+<details><summary>상속 전 사전증여와 상속 중 어느 쪽이 유리한가요?</summary><p>재산 규모와 시기, 가족 구성에 따라 달라 일률적으로 말씀드리기 어렵습니다. 사전증여는 증여 후 재산가치가 오르는 경우 그 상승분이 상속재산에서 빠지는 장점이 있지만, 상속인에게 한 증여는 상속개시 전 10년(상속인이 아닌 사람은 5년) 이내이면 상속재산에 합산됩니다. 증여세와 취득세 부담, 증여재산공제와 상속공제까지 함께 비교해야 하므로 증여 전에 미리 시뮬레이션해 보시는 것이 좋습니다.  <a class="fmore" href="faq-gift-vs-inherit.html">자세히 보기 →</a></p></details>
+<details><summary>비상장주식 증여 시 주식가치는 어떻게 평가하나요?</summary><p>거래 사례 등 시가가 있으면 시가로 평가합니다. 시가가 없으면 법에서 정한 보충적 평가 방법에 따라 1주당 순손익가치와 순자산가치를 가중평균하여 평가하며(일반 법인은 순손익가치 3 : 순자산가치 2, 부동산 비중이 높은 법인은 2 : 3), 순자산가치의 80%보다 낮게 평가되지 않습니다. 최대주주 등의 주식에는 경영권 프리미엄에 따른 할증이 붙을 수 있습니다. 법인의 최근 재무자료가 필요하므로 증여 시기를 정하기 전에 평가부터 해 보시는 것이 좋습니다.  <a class="fmore" href="faq-unlisted-stock.html">자세히 보기 →</a></p></details>
+<details><summary>다주택자의 부동산 양도 시 절세 방법은 무엇인가요?</summary><p>먼저 양도하려는 주택이 비과세나 중과 대상인지부터 확인해야 합니다. 일시적 2주택, 상속주택 특례 등 비과세 요건을 갖추었는지, 장기보유특별공제를 받을 수 있는지를 보고, 여러 채를 팔 때는 양도 순서와 시기를 조정해 세 부담을 줄일 수 있습니다. 취득가액과 필요경비 증빙을 챙기는 것도 중요합니다. 중과와 유예 규정은 세법 개정으로 자주 바뀌므로 매매계약 전에 최신 규정으로 검토받으시기를 권합니다.  <a class="fmore" href="faq-multi-home-transfer.html">자세히 보기 →</a></p></details>
+<details><summary>부동산을 팔면 양도소득세는 언제까지 신고하나요?</summary><p>양도일이 속하는 달의 말일부터 2개월 이내에 예정신고와 납부를 해야 합니다. 양도일은 대금을 청산한 날과 등기접수일 중 빠른 날입니다. 1세대 1주택 비과세, 장기보유특별공제 등은 요건에 따라 세금 차이가 크므로 매매계약 전에 미리 상담받으시는 것이 좋습니다.  <a class="fmore" href="faq-transfer-tax-deadline.html">자세히 보기 →</a></p></details>
+<details><summary>상속세는 언제까지 신고해야 하나요?</summary><p>상속개시일(사망일)이 속하는 달의 말일부터 6개월 이내에 신고하고 납부해야 합니다. 피상속인이나 상속인이 해외에 주소를 둔 경우에는 9개월입니다. 세액이 없어 보이는 경우에도 공제 적용과 재산 평가를 확인한 뒤 진행하시는 것이 안전합니다.  <a class="fmore" href="faq-inheritance-tax-deadline.html">자세히 보기 →</a></p></details>
+<details><summary>증여세는 언제 신고하고, 증여는 합산되나요?</summary><p>증여받은 날이 속하는 달의 말일부터 3개월 이내에 신고하고 납부해야 합니다. 같은 사람(배우자, 직계존비속 등)에게서 받은 증여는 10년 동안 합산해 증여재산공제를 적용하므로, 이전에 받은 증여가 있는지 먼저 확인해야 합니다.  <a class="fmore" href="faq-gift-tax-deadline.html">자세히 보기 →</a></p></details>
 </div>
 <div class="fp" role="tabpanel" id="fp-public" aria-labelledby="ft-public" hidden>
-<details><summary>공익법인 세무확인 대상은 어떻게 결정되나요?</summary><p>공익법인은 상속세 및 증여세법에 따라 자산 총액, 수입금액, 출연재산가액 등이 법에서 정한 기준 이상이면 외부 전문가(세무사 등)의 세무확인을 받아야 합니다. 기준 금액과 대상은 법령 개정에 따라 달라질 수 있고, 법인의 사업연도와 규모에 따라 해당 여부가 정해집니다. 대상 여부를 먼저 확인해 드리고, 세무확인과 함께 필요한 공시와 보고도 안내해 드립니다. <a class="fmore" href="faq-npo-tax-check.html">자세히 보기 →</a></p></details>
-<details><summary>공익법인 출연재산 보고는 언제 해야 하나요?</summary><p>사업연도 종료일부터 3개월 이내에 출연재산 보고서를 관할 세무서에 제출해야 합니다(12월 결산 법인은 다음 해 3월 말). 결산서류 공시와 외부 전문가의 세무확인 결과 제출은 4개월 이내로 법인별로 달라질 수 있습니다. 기한을 넘기면 가산세가 부과될 수 있으므로 결산 일정에 맞추어 미리 준비하시는 것이 좋습니다. <a class="fmore" href="faq-npo-asset-report.html">자세히 보기 →</a></p></details>
-<details><summary>비영리법인의 보조금 결산은 어떻게 진행하나요?</summary><p>보조금을 지급한 지방자치단체나 기관의 정산 지침에 따라 진행합니다. 보통 보조금 집행 내역과 증빙을 정리하고, 결산서와 정산 보고서를 작성해 검사를 받은 뒤 제출하며, 남은 금액이나 부적정하게 집행된 금액은 반환해야 합니다. 보조금 전용 계좌 사용 여부와 증빙 보관이 중요하므로 사업 시작 단계부터 회계를 구분해 두시는 것이 좋습니다. <a class="fmore" href="faq-subsidy-settlement.html">자세히 보기 →</a></p></details>
+<details><summary>공익법인 세무확인 대상은 어떻게 결정되나요?</summary><p>공익법인은 상속세 및 증여세법에 따라 자산 총액, 수입금액, 출연재산가액 등이 법에서 정한 기준 이상이면 외부 전문가(세무사 등)의 세무확인을 받아야 합니다. 기준 금액과 대상은 법령 개정에 따라 달라질 수 있고, 법인의 사업연도와 규모에 따라 해당 여부가 정해집니다. 대상 여부를 먼저 확인해 드리고, 세무확인과 함께 필요한 공시와 보고도 안내해 드립니다.  <a class="fmore" href="faq-npo-tax-check.html">자세히 보기 →</a></p></details>
+<details><summary>공익법인 출연재산 보고는 언제 해야 하나요?</summary><p>사업연도 종료일부터 3개월 이내에 출연재산 보고서를 관할 세무서에 제출해야 합니다(12월 결산 법인은 다음 해 3월 말). 결산서류 공시와 외부 전문가의 세무확인 결과 제출은 4개월 이내로 법인별로 달라질 수 있습니다. 기한을 넘기면 가산세가 부과될 수 있으므로 결산 일정에 맞추어 미리 준비하시는 것이 좋습니다.  <a class="fmore" href="faq-npo-asset-report.html">자세히 보기 →</a></p></details>
+<details><summary>비영리법인의 보조금 결산은 어떻게 진행하나요?</summary><p>보조금을 지급한 지방자치단체나 기관의 정산 지침에 따라 진행합니다. 보통 보조금 집행 내역과 증빙을 정리하고, 결산서와 정산 보고서를 작성해 검사를 받은 뒤 제출하며, 남은 금액이나 부적정하게 집행된 금액은 반환해야 합니다. 보조금 전용 계좌 사용 여부와 증빙 보관이 중요하므로 사업 시작 단계부터 회계를 구분해 두시는 것이 좋습니다.  <a class="fmore" href="faq-subsidy-settlement.html">자세히 보기 →</a></p></details>
 </div>
 <div class="fp" role="tabpanel" id="fp-audit" aria-labelledby="ft-audit" hidden>
-<details><summary>세무서에서 세무조사 통지를 받으면 어떻게 하나요?</summary><p>조사는 원칙적으로 개시 15일 전에 사전통지를 하므로 통지서의 조사 대상 기간과 항목, 제출 자료를 먼저 확인하셔야 합니다. 자료를 내시기 전에 세무사와 상담해 대응 방향을 정하시는 것이 좋으며, 법에서 정한 사유가 있으면 조사 연기 신청도 가능합니다. <a class="fmore" href="faq-audit-notice.html">자세히 보기 →</a></p></details>
-<details><summary>세금을 더 낸 것 같은데 돌려받을 수 있나요?</summary><p>법정신고기한이 지난 후 5년 이내에 경정청구를 통해 과다하게 낸 세금의 환급을 청구할 수 있습니다. 놓친 공제나 감면, 비용 누락이 있었는지 신고서를 검토해 환급 가능 여부를 확인해 드립니다. <a class="fmore" href="faq-refund-claim.html">자세히 보기 →</a></p></details>
-<details><summary>세무서의 과세처분에 이의가 있으면 어떻게 하나요?</summary><p>과세처분 통지를 받은 날부터 90일 이내에 이의신청, 심사청구, 심판청구 등 조세불복 절차를 진행할 수 있습니다. 기한이 짧으므로 통지서를 받으시면 바로 상담하시는 것이 중요합니다. <a class="fmore" href="faq-tax-appeal.html">자세히 보기 →</a></p></details>
+<details><summary>세무서에서 세무조사 통지를 받으면 어떻게 하나요?</summary><p>조사는 원칙적으로 개시 15일 전에 사전통지를 하므로 통지서의 조사 대상 기간과 항목, 제출 자료를 먼저 확인하셔야 합니다. 자료를 내시기 전에 세무사와 상담해 대응 방향을 정하시는 것이 좋으며, 법에서 정한 사유가 있으면 조사 연기 신청도 가능합니다.  <a class="fmore" href="faq-audit-notice.html">자세히 보기 →</a></p></details>
+<details><summary>세금을 더 낸 것 같은데 돌려받을 수 있나요?</summary><p>법정신고기한이 지난 후 5년 이내에 경정청구를 통해 과다하게 낸 세금의 환급을 청구할 수 있습니다. 놓친 공제나 감면, 비용 누락이 있었는지 신고서를 검토해 환급 가능 여부를 확인해 드립니다.  <a class="fmore" href="faq-refund-claim.html">자세히 보기 →</a></p></details>
+<details><summary>세무서의 과세처분에 이의가 있으면 어떻게 하나요?</summary><p>과세처분 통지를 받은 날부터 90일 이내에 이의신청, 심사청구, 심판청구 등 조세불복 절차를 진행할 수 있습니다. 기한이 짧으므로 통지서를 받으시면 바로 상담하시는 것이 중요합니다.  <a class="fmore" href="faq-tax-appeal.html">자세히 보기 →</a></p></details>
 </div>
 <div class="fp" role="tabpanel" id="fp-gen" aria-labelledby="ft-gen" hidden>
-<details><summary>상담은 어떻게 신청하나요?</summary><p>온라인 상담, 카톡 문의, 전화(02-792-3579) 중 편하신 방법으로 신청하실 수 있습니다. 상담 가능 시간은 평일 오전 9:30부터 오후 5:30까지(점심 12:00~13:00)이며, 주말과 공휴일은 휴무입니다. <a class="fmore" href="faq-how-to-consult.html">자세히 보기 →</a></p></details>
-<details><summary>사무실 위치와 주차는 어떻게 되나요?</summary><p>서울특별시 용산구 새창로 217, 1303호(토투밸리)에 있으며, 지하철 신용산역 5번 출구에서 10미터, 용산역 1번 출구에서 200미터 거리입니다. 주차가 가능합니다. <a class="fmore" href="faq-office-location.html">자세히 보기 →</a></p></details>
+<details><summary>상담은 어떻게 신청하나요?</summary><p>온라인 상담, 카톡 문의, 전화(02-792-3579) 중 편하신 방법으로 신청하실 수 있습니다. 상담 가능 시간은 평일 오전 9:30부터 오후 5:30까지(점심 12:00~13:00)이며, 주말과 공휴일은 휴무입니다.  <a class="fmore" href="faq-how-to-consult.html">자세히 보기 →</a></p></details>
+<details><summary>사무실 위치와 주차는 어떻게 되나요?</summary><p>서울특별시 용산구 새창로 217, 1303호(토투밸리)에 있으며, 지하철 신용산역 5번 출구에서 10미터, 용산역 1번 출구에서 200미터 거리입니다. 주차가 가능합니다.  <a class="fmore" href="faq-office-location.html">자세히 보기 →</a></p></details>
 </div>
 <p class="faqcta up">그 밖의 궁금한 점은 <a href="#apply" data-apply>온라인 상담</a> 또는 전화 <a href="tel:027923579">02-792-3579</a>로 문의해 주세요.</p>
 </div>
