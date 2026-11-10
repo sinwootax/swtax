@@ -145,6 +145,8 @@ footer a:hover{border-color:#F5E6A8}
 }
 @media (prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important}
+ .hero::before{animation:drift 11s ease-in-out infinite alternate!important}
+ .hero::after{animation:shine 4.5s 1.2s ease-in-out infinite!important}
  .js .up,.js .lf,.js .rt,.js header{opacity:1!important;transform:none!important}
  .js .photo,.js .mapbox{clip-path:none!important}
 }
@@ -334,7 +336,6 @@ footer p{font-size:15.5px}
 .links .mq .lk{display:flex;flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:none;gap:8px;padding-right:8px}
 .links .mq a{flex:none}
 @keyframes mq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.links .mq{-webkit-mask-image:none;mask-image:none;overflow:visible}.links .mq .lk{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.links .mq a[aria-hidden]{display:none}}
 .photo{overflow:hidden}
 html,body{overflow-x:clip}
 .links h3{font-size:17px;margin-bottom:14px}
@@ -858,7 +859,7 @@ var IMG={
     Array.prototype.slice.call(lk.children).forEach(function(a){var c=a.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;c.classList.remove('up');c.style.removeProperty('--d');lk.appendChild(c)});
     var kids=Array.prototype.slice.call(lk.children),half=kids.length/2;
     kids.slice(0,half).forEach(function(a){var c=a.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;lk.appendChild(c)});
-    var mq=lk.parentNode;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var mq=lk.parentNode;
     var unit=0,pos=0,hold=0,down=false,sx=0,sl=0,moved=false,last=0;
     function calc(){unit=lk.scrollWidth/3;if(!pos)pos=unit;mq.scrollLeft=pos}
     function pause(ms){hold=Date.now()+ms}
