@@ -159,3 +159,5 @@ html[data-theme="light"] .svcl{color:#6F5226;border-color:rgba(111,82,38,.5)}
 @media (max-width:480px){.ansbox{padding:18px 16px;font-size:16px}.art p.tx,.art ul.bl li{font-size:15.5px}.art h2{margin-top:32px}}
 .ctags{margin:0;font-size:14.5px;color:#9AA3B2;word-break:keep-all}
 html[data-theme="light"] .ctags{color:#6B6455}
+footer .fb{display:flex;align-items:center;gap:10px}
+footer .fb img{width:30px;height:30px;display:block;flex:none}
