@@ -6,7 +6,7 @@
 <link rel="icon" href="favicon.ico?v=2" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png?v=2"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <title>페이지를 찾을 수 없습니다 | 신우세무회계사무소</title>
 <meta name="robots" content="noindex,follow">
-<meta http-equiv="refresh" content="3;url=https://www.swtax.co.kr/">
+<meta http-equiv="refresh" content="4;url=https://www.swtax.co.kr/">
 <link rel="canonical" href="https://www.swtax.co.kr/">
 <style>
 html,body{margin:0;height:100%;background:#0C0F14;color:#F1EEE7;font-family:'Malgun Gothic','Nanum Gothic',sans-serif}
@@ -21,6 +21,21 @@ a{display:inline-block;margin-top:10px;padding:13px 26px;border-radius:8px;backg
 <p>홈페이지 주소가 새로 바뀌었습니다.<br>잠시 후 메인 페이지로 이동합니다.</p>
 <a href="https://www.swtax.co.kr/">메인 페이지로 이동</a>
 </div>
-<script>setTimeout(function(){location.replace("https://www.swtax.co.kr/")},2500)</script>
+<script>
+(function(){
+  var p="";try{p=decodeURIComponent(location.pathname)}catch(e){p=location.pathname}
+  p=p.toLowerCase().replace(/[\s_\-\/+]/g,"");
+  var R=[
+   [/오시는|찾아오|약도|위치|map|location|visit|contact|direction/,"index.html#visit"],
+   [/조세불복|세무조사|불복|조사|audit|appeal|dispute/,"service-audit.html"],
+   [/공익|비영리|nonprofit|public|charit/,"service-public.html"],
+   [/양도|상속|증여|부동산|주식|realty|estate|stock|inherit|gift/,"service-realty.html"],
+   [/사업자|기장|법인|세무관리|컨설팅|biz|business|corp/,"service-biz.html"]
+  ];
+  var to="index.html";
+  for(var i=0;i<R.length;i++){if(R[i][0].test(p)){to=R[i][1];break}}
+  location.replace("https://www.swtax.co.kr/"+to);
+})();
+</script>
 </body>
 </html>
