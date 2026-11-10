@@ -165,9 +165,13 @@ header.shadow{box-shadow:0 8px 28px rgba(0,0,0,.55)}
 .dd a{color:#E6E3DC}.dd a:hover{background:#212836}
 .hero{background:radial-gradient(ellipse at 78% 18%,rgba(201,169,106,.18),transparent 55%),linear-gradient(180deg,rgba(8,10,14,.6),rgba(8,10,14,.86)),#12161D url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png) center/cover}
 .hero::after{background:linear-gradient(115deg,transparent 35%,rgba(230,196,120,.26) 50%,transparent 65%)}
+/* 글자 선명도: 확대/축소해도 또렷하게 */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-synthesis:none}
+.js .hero .up.done{opacity:1;animation:none;transform:none}
 /* 첫 화면 배경 움직임: 천천히 흐르는 금빛 광원 + 빛 지나감 */
 .hero::before{content:"";position:absolute;inset:-20%;pointer-events:none;z-index:0;background:radial-gradient(circle at 20% 30%,rgba(214,176,98,.42),transparent 36%),radial-gradient(circle at 80% 70%,rgba(214,176,98,.34),transparent 40%),radial-gradient(circle at 55% 15%,rgba(255,236,190,.22),transparent 30%);animation:drift 11s ease-in-out infinite alternate}
-@keyframes drift{0%{transform:translate3d(-12%,-8%,0) scale(1)}50%{transform:translate3d(12%,8%,0) scale(1.15)}100%{transform:translate3d(-4%,12%,0) scale(1.05)}}
+@keyframes drift{0%{transform:translate(-12%,-8%) scale(1)}50%{transform:translate(12%,8%) scale(1.15)}100%{transform:translate(-4%,12%) scale(1.05)}}
 .hero::after{animation-duration:4.5s}
 html[data-theme="light"] .hero::before{background:radial-gradient(circle at 20% 30%,rgba(201,169,106,.30),transparent 38%),radial-gradient(circle at 80% 70%,rgba(201,169,106,.22),transparent 42%)}
 .hero h1::before{content:"";display:block;width:52px;height:2px;background:#C9A96A;margin-bottom:22px}
@@ -884,6 +888,8 @@ var IMG={
     requestAnimationFrame(tick);
   })();
 
+  /* 등장 효과가 끝난 글자는 변형 레이어를 해제해 확대/축소 시에도 선명하게 */
+  document.addEventListener('animationend',function(e){var t=e.target;if(t&&t.classList&&t.classList.contains('up')&&e.animationName==='rise')t.classList.add('done')},true);
   /* FAQ 분야 탭 */
   (function(){var tb=[].slice.call(document.querySelectorAll('.ftabs button'));
     tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById('fp-'+x.getAttribute('data-tab')).hidden=!on})})})})();
