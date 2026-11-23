@@ -24,5 +24,5 @@
 - [부동산·주식 양도·상속·증여세 컨설팅](https://www.swtax.co.kr/service-realty.html)
 - [세무조사 및 조세불복 등 대행](https://www.swtax.co.kr/service-audit.html)
 - [공익법인 및 비영리 분야 세무](https://www.swtax.co.kr/service-public.html)
-- [노란우산공제 안내](https://www.swtax.co.kr/yellow-umbrella.html): 소득공제 한도, 납입한도, 이율, 가입기관, 가입 방법
+- [노란우산공제 안내](https://www.swtax.co.kr/yellow-umbrella.html): 소득공제 한도, 납입한도, 이율, 가입 대상, 해지 시 세금
 - [자주 묻는 질문·상담사례](https://www.swtax.co.kr/)
